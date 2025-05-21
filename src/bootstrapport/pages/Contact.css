@@ -1,0 +1,62 @@
+/* Contact Page with Black Background & Gold Glowing Effect */
+
+h2 {
+    color: #ffdd57;
+    text-shadow: 0 0 8px #ffdd57;
+  }
+  
+  .form-label {
+    color: #eee;
+    text-shadow: 0 0 5px #ffdd57;
+  }
+  
+  .form-control {
+    background-color: #111;
+    border: 1px solid #444;
+    color: #eee;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .form-control::placeholder {
+    color: #666;
+  }
+  .form-control:focus {
+    box-shadow: 0 0 8px #ffdd57;
+    border-color: #ffdd57;
+    background-color: #000;
+    color:#ffdd57
+  }
+  
+  .btn-primary {
+    background-color: #ffdd57;
+    border: none;
+    color: #000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    bottom:30px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ffc107;
+    box-shadow: 0 0 10px rgba(255, 221, 87, 0.8);
+  }
+  /* Contact.css */
+
+/* Existing contact styles... */
+
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.social-media-icons a {
+  margin: 0 5px;
+  color: #ffdd57; /* Gold color */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-media-icons a:hover {
+  color: #ffc107; /* Slightly different gold on hover */
+  transform: scale(1.3);
+}

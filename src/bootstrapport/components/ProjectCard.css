@@ -1,0 +1,22 @@
+/* Project Card with Black Background & Gold Glowing Hover Effect */
+
+.project-card {
+    background-color: #111;
+    border: 1px solid #444;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 221, 87, 0.8);
+  }
+  
+  .project-card .card-title {
+    color: #ffdd57;
+    text-shadow: 0 0 8px #ffdd57;
+  }
+  
+  .project-card .card-text {
+    color: #eee;
+  }
+  

@@ -1,0 +1,161 @@
+/* Navbar Styles with Black Background & Gold Glowing Effect */
+
+.custom-navbar {
+    background-color: #000;           /* Black background */
+    border-bottom: 2px solid #ffdd57;
+    box-shadow: 0 0 10px rgba(255, 221, 87, 0.7);
+  }
+  
+  .brand-color {
+    color: #ffdd57;                  /* Gold for brand */
+    font-weight: bold;
+    text-shadow: 0 0 8px #ffdd57;
+  }
+  
+  .nav-link-color {
+    color: #eee !important;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  .nav-link-color:hover {
+    color: #ffdd57 !important;
+    text-shadow: 0 0 8px #ffdd57;
+  }
+  
+  /* Custom toggle icon */
+  .custom-toggle-icon {
+    border: 2px solid #ffdd57;
+    border-radius: 30%;
+    padding: 5px;
+    display: inline-flex;
+    color:yellow;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .custom-toggle-icon:hover {
+    border-color: #ffdd57;
+    background-color: rgba(255, 221, 87, 0.2);
+    box-shadow: 0 0 8px #ffdd57;
+  }
+  
+  /* Remove default toggler borders and outlines */
+  .navbar-toggler {
+    border: none !important;
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: none !important;
+  }
+/* Ensure the container for nav links is a flex container and aligns to flex-end by default */
+.navbar-collapse .custom-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;  /* Align links to the right on large screens */
+    width: 100%;
+    margin-right:60px;
+  }
+  
+  /* On smaller screens, center the nav links */
+  @media (max-width: 991.98px) {
+    .navbar-collapse .custom-nav {
+      justify-content: center;
+    }
+  }
+  /* Styling for the brand/logo */
+.brand-logo {
+  font-family: "Satisfy", serif;/* Uses the imported Google Font */
+  font-size: 3rem;                   /* Adjust size as needed */
+  color: #3d3a2c;                    /* Gold color */
+  /* font-weight: bold; */
+  text-shadow: 0 0 10px rgba(255, 221, 87, 0.8); /* Glowing effect */
+}
+/* Glassmorphism Effect */
+.glass-navbar {
+  background: #e2d1d126 !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Brand Styling */
+.brand-logo {
+  font-size: 2.3rem;
+  margin-left: 30px;
+  font-weight: bold;
+  color: #e2d809 !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Nav Link Styling */
+.custom-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  /* width: 100%; */
+  bottom:15px !important;
+  margin: 0 15px;
+  top:15px !important;
+  padding: 8px 15px !important;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.custom-nav .nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+}
+
+.custom-nav .nav-link.active {
+  background: rgba(242, 218, 3, 0.334);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+/* Toggle Button Styling */
+.custom-toggle-icon {
+  color: white;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Mobile Navbar Styling */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 10px;
+  }
+/* Nav Link Styling */
+.custom-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  width: 100%;
+  bottom:15px !important;
+  margin: 0 15px;
+  top:15px !important;
+  padding: 8px 15px !important;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+  .custom-nav .nav-link {
+    text-align: center;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Background Gradient */
+body {
+  background: linear-gradient(45deg, #08001f, #1a1a4d);
+}

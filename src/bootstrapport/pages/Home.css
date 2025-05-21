@@ -1,0 +1,117 @@
+.alt-home-hero {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #000, #111);
+  color: white;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  /* gap: 2rem; */
+}
+
+.hero-left {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-right {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-heading {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.hero-heading span {
+  color: #ffeb3b;
+  text-shadow: 0 0 15px #ffeb3b;
+}
+
+.hero-subtext {
+  font-size: 1.25rem;
+  color: #ccc;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  background: #ffeb3b;
+  color: #000;
+  box-shadow: 0 0 15px #ffeb3b88;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #ffeb3b;
+}
+
+.hero-btn.outline {
+  background: transparent;
+  color: #ffeb3b;
+  border: 2px solid #ffeb3b;
+}
+
+/* Animated yellow blob background on left */
+.blob-yellow {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #ffeb3b, #fbc02d);
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  animation: floatBlob 10s ease-in-out infinite alternate;
+  filter: blur(80px);
+}
+
+@keyframes floatBlob {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    transform: translateY(-30px) scale(1.1);
+  }
+}
+@media screen and (max-width:463px) {
+  .hero-buttons {
+    flex-wrap: nowrap;
+    /* overflow-x: auto; */
+    margin-bottom:30px;
+  }
+
+  .hero-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  background: #a39741;
+  color: #000;
+  box-shadow: 0 0 15px #ffeb3b88;
+}
+.hero-btn {
+    white-space: nowrap;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+}

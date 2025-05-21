@@ -1,0 +1,17 @@
+/* About Page with Gold Glowing Headings & Text */
+
+h1 {
+    color: #ffdd57;
+    text-shadow: 0 0 8px #ffdd57;
+  }
+  
+  p {
+    color: #ccc;
+    font-size: 18px;
+  }
+  .custom-circle {
+    border-radius: 88% !important;
+    height: 230px;
+}
+  
+  

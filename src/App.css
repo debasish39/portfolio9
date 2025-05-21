@@ -1,0 +1,23 @@
+body.light {
+  background: #fff;
+  color: #333;
+}
+
+body.dark {
+  background: #333;
+  color: #fff;
+}
+
+.dark header {
+  background: #222;
+}
+
+.dark section {
+  background: #444;
+  color: #fff;
+}
+
+.dark footer {
+  background: #222;
+  color: #fff;
+}
