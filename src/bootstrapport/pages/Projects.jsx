@@ -16,12 +16,7 @@ import joke from './joke.png';
 // import SplashCursor from '../SplashCursor.jsx';
 
 const projectData = [
-  {
-    title: 'Portfolio Website',
-    description: 'A personal portfolio showcasing my skills and projects.',
-    imageUrl: port, 
-    projectUrl: 'https://deba-port.netlify.app/'
-  },
+
   {
     title: 'Quote Generator',
     description: 'An app that generates random quotes to inspire you.',
