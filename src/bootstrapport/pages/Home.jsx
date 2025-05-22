@@ -83,9 +83,9 @@ const Home = () => {
     </p>
     <div className="hero-buttons">
        {/*You are missing a space between the href and style attributes. This makes the HTML invalid.*/}
-     <button className="hero-btn">
+{/*      <button className="hero-btn">
   <a href="/projects" style={{ textDecoration: 'none', color: 'black' }}>✨ View Projects</a>
-</button>
+</button> */}
        
 
 <button className="hero-btn">
