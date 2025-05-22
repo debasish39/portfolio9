@@ -86,6 +86,12 @@ const Home = () => {
      <button className="hero-btn">
   <a href="/projects" style={{ textDecoration: 'none', color: 'black' }}>✨ View Projects</a>
 </button>
+       
+
+<button className="hero-btn">
+  <Link to="/projects" style={{ textDecoration: 'none', color: 'black' }}>✨ View Projects</Link>
+</button>
+
 
       <button className="hero-btn outline"><a href="Resume.pdf" target="_top " rel="noopener noreferrer"style={{textDecoration:'none',color:"white"}} >
   📩 Resume
