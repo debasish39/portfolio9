@@ -14,6 +14,8 @@ import cal from './cal.png';
 import tem from './tem.png';  
 import joke from './joke.png';  
 // import SplashCursor from '../SplashCursor.jsx';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const projectData = [
   {
@@ -108,7 +110,11 @@ const Projects = () => {
           behavior: "smooth", // Smooth scroll
         });
       };
-    
+ 
+useEffect(() => {
+  AOS.init({ duration: 1500 });
+}, []);
+
   return (
     <Container className="mt-3">
       {/* Scroll Progress Bar */}
@@ -125,31 +131,41 @@ const Projects = () => {
       ></div>
       {/* <SplashCursor/> */}
       <h2 className="mb-4">My Projects</h2>
-      <Row>
-        {projectData.map((project, index) => (
-          <Col xs={12} key={index}> {/* Full width column for each project */}
-            <ProjectCard {...project} />
-          </Col>
-        ))}
-      </Row>
+     <Row>
+  {projectData.map((project, index) => (
+    <Col
+      xs={12}
+      key={index}
+      data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} // Alternate direction
+      data-aos-delay={index * 100} // Delay increases per card (optional smooth effect)
+    >
+      <ProjectCard {...project} />
+    </Col>
+  ))}
+</Row>
+
+
+
       {showScrollTop && (
-                <Button
-                  onClick={scrollToTop}
-                  style={{
-                    position: "fixed",
-                    bottom: "60px",
-                    right: "12px",
-                    zIndex: 9999,
-                    backgroundColor: " #ffe32b", // Customize button color
-                    border: "none",
-                    borderRadius: "60%",
-                    padding: "9px",
-                    boxShadow: "0 2px 99px yellow",
-                    fontSize: "20px",
-                  }}
-                >
-                  ↑
-                </Button>
+            <Button
+                    onClick={scrollToTop}
+                    style={{
+                      position: "fixed",
+                      bottom: "90px",
+                      right: "39px",
+                      zIndex: 9999,
+                      backgroundColor: "#ffe32b",
+                      border: "none",
+                      borderRadius: "60%",
+                      padding: "12px",
+                      boxShadow: "0 2px 99px yellow",
+                      fontSize: "23px", // Increased from 18px to 32px
+                      fontWeight: '900',
+                    }}
+                    data-aos="fade-left"
+                  >
+                    ↑
+                  </Button>
               )}
     </Container>
   );
