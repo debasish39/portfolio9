@@ -48,7 +48,7 @@ const Home = () => {
       ></div>
 
       {/* Left: Profile Image */}
-      <div className="hero-left mt-3" data-aos="fade-right">
+      <div className="hero-left pt-3" data-aos="fade-right">
         <img
           src={sonu}
           alt="Debasish"
