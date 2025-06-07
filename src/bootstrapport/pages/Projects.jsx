@@ -112,7 +112,7 @@ const Projects = () => {
       };
  
 useEffect(() => {
-  AOS.init({ duration: 900 });
+  AOS.init({ duration: 300 });
 }, []);
 
   return (
