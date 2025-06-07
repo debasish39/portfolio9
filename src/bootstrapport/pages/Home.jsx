@@ -74,7 +74,7 @@ const Home = () => {
         </p>
         <div className="hero-buttons">
           <button className="hero-btn">
-            <a href="/projects" style={{ textDecoration: "none", color: "black" }}>✨ View Projects</a>
+            <Link to="/projects" style={{ textDecoration: "none", color: "black" }}>✨ View Projects</Link>
           </button>
           <button className="hero-btn outline">
             <a
