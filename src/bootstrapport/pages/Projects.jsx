@@ -116,7 +116,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <Container className="m-3">
+    <Container className="mt-5 mb-5">
       {/* Scroll Progress Bar */}
       <div
         style={{
