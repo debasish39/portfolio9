@@ -72,7 +72,7 @@ const Home = () => {
           🚀 A passionate Full-Stack Developer turning complex ideas into modern,
           performant, and beautiful web experiences.
         </p>
-        <div className="hero-buttons mb-3">
+        <div className="hero-buttons mb-3 pb-3">
           <button className="hero-btn">
             <Link to="/projects" style={{ textDecoration: "none", color: "black" }}>✨ View Projects</Link>
           </button>
