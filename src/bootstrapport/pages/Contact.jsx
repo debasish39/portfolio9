@@ -82,9 +82,9 @@ const Contact = () => {
       )}
  {error && (
       <>
-        <Alert variant="danger" className="mt-3" data-aos="fade-up">
+{/*         <Alert variant="danger" className="mt-3" data-aos="fade-up">
           <strong>Note:</strong> As the backend is not deployed on Netlify, the form data isn't sent. You can contact me via the platforms below.
-        </Alert>
+        </Alert> */}
       <Alert variant="danger" data-aos="fade-up">{error}</Alert>
       </>
       )}
