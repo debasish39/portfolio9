@@ -81,41 +81,15 @@ const Home = () => {
   </button>
 
   {/* Icon-only: View Resume */}
-  <a
-    href="/Resume.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    title="View Resume"
-    style={{
-      textDecoration: "none",
-      fontSize: "24px",
-      color: "white",
-      backgroundColor: "#444",
-      padding: "10px",
-      borderRadius: "50%",
-      display: "inline-block",
-    }}
-  >
-    📄
-  </a>
-
-  {/* Icon-only: Download Resume */}
+  <button className="hero-btn outline">
   <a
     href="/Resume.pdf"
     download="Debasish_Resume.pdf"
-    title="Download Resume"
-    style={{
-      textDecoration: "none",
-      fontSize: "24px",
-      color: "white",
-      backgroundColor: "#444",
-      padding: "10px",
-      borderRadius: "50%",
-      display: "inline-block",
-    }}
+    style={{ textDecoration: "none", color: "white" }}
   >
-    📥
+    📩 Download Resume
   </a>
+</button>
 </div>
 
 
