@@ -79,7 +79,7 @@ const Home = () => {
           <button className="hero-btn outline">
             <a
               href="Resume.pdf"
-              target="_top"
+              target="_top" download="Debasish_Resume.pdf"
               rel="noopener noreferrer"
               style={{ textDecoration: "none", color: "white" }}
             >
