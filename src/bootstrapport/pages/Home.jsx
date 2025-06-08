@@ -84,7 +84,7 @@ const Home = () => {
   <button className="hero-btn outline">
   <a
     href="/Resume.pdf"
-    download="Debasish_Resume.pdf"
+    download
     style={{ textDecoration: "none", color: "white" }}
   >
     📩 Download Resume
