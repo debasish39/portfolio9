@@ -75,17 +75,20 @@ const Contact = () => {
       <h2 data-aos="zoom-in">Contact Me</h2>
 
       {submitted && (
-        <>
-          <h5 style={{ color: "#ffdd57" }} data-aos="fade-up">Note:</h5>
-          <p data-aos="fade-up">
-            As the backend is not deployed on Netlify, the above form data is not sent to the server.
-            For contact, the icons below are useful...
-          </p>
-          <Alert variant="success" data-aos="fade-up">Thank you for your message!</Alert>
-        </>
-      )}
 
-      {error && <Alert variant="danger" data-aos="fade-up">{error}</Alert>}
+       
+          <Alert variant="success" data-aos="fade-up">Thank you for your message!</Alert>
+        
+      )}
+ {error && (
+      <>
+        <Alert variant="danger" className="mt-3" data-aos="fade-up">
+          <strong>Note:</strong> As the backend is not deployed on Netlify, the form data isn't sent. You can contact me via the platforms below.
+        </Alert>
+      <Alert variant="danger" data-aos="fade-up">{error}</Alert>
+      </>
+      )}
+     
 
       <Form onSubmit={handleSubmit} data-aos="fade-up">
         <Form.Group controlId="contactName" className="mb-3" data-aos="fade-right">
@@ -128,14 +131,10 @@ const Contact = () => {
         <Button variant="primary" type="submit" data-aos="zoom-in">Send Message</Button>
       </Form>
 
-      {error && (
-        <Alert variant="danger" className="mt-3" data-aos="fade-up">
-          <strong>Note:</strong> As the backend is not deployed on Netlify, the form data isn't sent. You can contact me via the platforms below.
-        </Alert>
-      )}
+     
 
       {/* Social Media Icons Section */}
-      <div className="social-media-icons mt-4" data-aos="fade-up">
+      <div className="social-media-icons mt-4 mb-3" data-aos="fade-up">
         <a href="https://www.linkedin.com/in/debasish-panda-857715314/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin size={30} className="icon" />
         </a>
