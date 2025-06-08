@@ -72,21 +72,37 @@ const Home = () => {
           🚀 A passionate Full-Stack Developer turning complex ideas into modern,
           performant, and beautiful web experiences.
         </p>
-        <div className="hero-buttons mb-3 pb-3">
-          <button className="hero-btn">
-            <Link to="/projects" style={{ textDecoration: "none", color: "black" }}>✨ View Projects</Link>
-          </button>
-          <button className="hero-btn outline">
-            <a
-              href="Resume.pdf"
-              target="_top" download="Debasish_Resume.pdf"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              📩 Resume
-            </a>
-          </button>
-        </div>
+       <div className="hero-buttons mb-3 pb-3">
+  <button className="hero-btn">
+    <Link to="/projects" style={{ textDecoration: "none", color: "black" }}>
+      ✨ View Projects
+    </Link>
+  </button>
+
+  {/* View Resume (optional) */}
+  <button className="hero-btn outline">
+    <a
+      href="/Resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ textDecoration: "none", color: "white" }}
+    >
+      📄 View Resume
+    </a>
+  </button>
+
+  {/* Download Resume */}
+  <button className="hero-btn outline">
+    <a
+      href="/Resume.pdf"
+      download="Debasish_Resume.pdf"
+      style={{ textDecoration: "none", color: "white" }}
+    >
+      📥 Download Resume
+    </a>
+  </button>
+</div>
+
       </div>
 
       {/* Scroll to Top Button */}
