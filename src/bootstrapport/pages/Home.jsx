@@ -101,7 +101,7 @@ const Home = () => {
         onClick={scrollToTop}
         style={{
           position: "fixed",
-          bottom: "90px",
+          bottom: "139px",
           right: "39px",
           zIndex: 9999,
           backgroundColor: "#ffe32b",
