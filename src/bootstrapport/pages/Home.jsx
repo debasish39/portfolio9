@@ -72,36 +72,52 @@ const Home = () => {
           🚀 A passionate Full-Stack Developer turning complex ideas into modern,
           performant, and beautiful web experiences.
         </p>
-       <div className="hero-buttons mb-3 pb-3">
+      <div className="hero-buttons mb-3 pb-3" style={{ display: "flex", gap: "15px" }}>
+  {/* Projects Button */}
   <button className="hero-btn">
     <Link to="/projects" style={{ textDecoration: "none", color: "black" }}>
       ✨ View Projects
     </Link>
   </button>
 
-  {/* View Resume (optional) */}
-  <button className="hero-btn outline">
-    <a
-      href="/Resume.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{ textDecoration: "none", color: "white" }}
-    >
-      📄 View Resume
-    </a>
-  </button>
+  {/* Icon-only: View Resume */}
+  <a
+    href="/Resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="View Resume"
+    style={{
+      textDecoration: "none",
+      fontSize: "24px",
+      color: "white",
+      backgroundColor: "#444",
+      padding: "10px",
+      borderRadius: "50%",
+      display: "inline-block",
+    }}
+  >
+    📄
+  </a>
 
-  {/* Download Resume */}
-  <button className="hero-btn outline">
-    <a
-      href="/Resume.pdf"
-      download="Debasish_Resume.pdf"
-      style={{ textDecoration: "none", color: "white" }}
-    >
-      📥 Download Resume
-    </a>
-  </button>
+  {/* Icon-only: Download Resume */}
+  <a
+    href="/Resume.pdf"
+    download="Debasish_Resume.pdf"
+    title="Download Resume"
+    style={{
+      textDecoration: "none",
+      fontSize: "24px",
+      color: "white",
+      backgroundColor: "#444",
+      padding: "10px",
+      borderRadius: "50%",
+      display: "inline-block",
+    }}
+  >
+    📥
+  </a>
 </div>
+
 
       </div>
 
