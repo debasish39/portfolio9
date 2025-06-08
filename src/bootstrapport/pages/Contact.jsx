@@ -58,7 +58,7 @@ const Contact = () => {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="mt-5 mb-5">
       {/* Scroll Progress Bar */}
       <div
         style={{
@@ -128,7 +128,7 @@ const Contact = () => {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit" data-aos="zoom-in">Send Message</Button>
+        <Button variant="warning" type="submit" data-aos="zoom-in">Send Message</Button>
       </Form>
 
      
