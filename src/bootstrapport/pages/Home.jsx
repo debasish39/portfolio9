@@ -87,7 +87,7 @@ const Home = () => {
     download
     style={{ textDecoration: "none", color: "white" }}
   >
-    📩 Download Resume
+    📩 View Resume
   </a>
 </button>
 </div>
