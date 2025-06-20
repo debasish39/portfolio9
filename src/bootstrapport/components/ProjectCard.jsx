@@ -14,9 +14,10 @@ const ProjectCard = ({ title, description, imageUrl, projectUrl }) => {
         <Card.Title>{title}</Card.Title>
         <Card.Text>{description}</Card.Text>
         {projectUrl && (
-          <Button variant="primary" href={projectUrl} target="_blank" rel="noopener noreferrer">
-            View Project
-          </Button>
+         <Button variant="outline-warning" href={projectUrl} target="_blank" rel="noopener noreferrer">
+  View Project
+</Button>
+
         )}
       </Card.Body>
     </Card>
