@@ -172,8 +172,9 @@ const Contact = () => {
             zIndex: 9999,
             backgroundColor: "#ffe32b",
             border: "none",
-            borderRadius: "60%",
-            padding: "12px",
+           borderRadius: "8px", // or 0 for perfect square
+padding: "10px 14px", // to balance the square shape
+
             boxShadow: "0 2px 99px yellow",
             fontSize: "23px",
             fontWeight: '900',
