@@ -146,27 +146,29 @@ useEffect(() => {
 
 
 
-      {showScrollTop && (
-            <Button
-                    onClick={scrollToTop}
-                    style={{
-                      position: "fixed",
-                      bottom: "90px",
-                      right: "39px",
-                      zIndex: 9999,
-                      backgroundColor: "#ffe32b",
-                      border: "none",
-                      borderRadius: "60%",
-                      padding: "12px",
-                      boxShadow: "0 2px 99px yellow",
-                      fontSize: "23px", // Increased from 18px to 32px
-                      fontWeight: '900',
-                    }}
-                    data-aos="fade-left"
-                  >
-                    ↑
-                  </Button>
-              )}
+    {showScrollTop && (
+  <Button
+    onClick={scrollToTop}
+    style={{
+      position: "fixed",
+      bottom: "90px",
+      right: "39px",
+      zIndex: 9999,
+      backgroundColor: "#ffe32b",
+      border: "none",
+      borderRadius: "8px", // Square-ish
+      padding: "10px 14px",
+      boxShadow: "0 2px 99px yellow",
+      fontSize: "23px",
+      fontWeight: "900",
+    }}
+    data-aos="slide-down"
+  >
+    ↑
+  </Button>
+)}
+
+             
     </Container>
   );
 };
