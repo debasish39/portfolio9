@@ -1,0 +1,92 @@
+/* Projects Page Heading with Gold Glowing Effect */
+
+h2 {
+    color: #ffdd57;
+    text-shadow: 0 0 8px #ffdd57;
+  }
+  @import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+@import 'swiper/css/effect-coverflow';
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  height: 3px;
+  background-color: #ffeb3b;
+  z-index: 9999;
+  left: 0;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 39px;
+  background-color: #ffe32b;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 23px;
+  font-weight: 900;
+  box-shadow: 0 2px 99px yellow;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+}
+.scroll-top-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Ensure Swiper looks great */
+.swiper {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.swiper-slide {
+  width: 300px;
+}
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background-color: #ffeb3b;
+  z-index: 9999;
+  transition: width 0.3s ease;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 39px;
+  background-color: #605a39;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 99px rgb(255, 255, 0);
+  font-size: 23px;
+  font-weight: 900;
+  z-index: 9999;
+}
+
+.scroll-top-btn:hover {
+  transform: scale(1.1);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffeb3b;
+  text-shadow: 0 0 10px #ffeb3b88;
+}
+.spinner-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #ffeb3b;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.2rem;
+}

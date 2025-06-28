@@ -1,0 +1,171 @@
+/* ========================
+   Navbar: Black & Gold Theme (React-Bootstrap + AOS)
+   ======================== */
+
+.custom-navbar {
+  background-color: #000;
+  border-bottom: 2px solid #ffdd57;
+  box-shadow: 0 4px 15px rgba(255, 221, 87, 0.3);
+ 
+  z-index: 1030;
+  transition: all 0.4s ease-in-out;
+}
+
+/* Show/hide on scroll */
+.navbar-hide {
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+}
+.navbar-show {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+/* Navbar.css */
+
+/* Default size */
+.brand-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: font-size 0.3s ease;
+}
+
+/* Smaller on small screens */
+@media (max-width: 576px) {
+  .brand-logo {
+    font-size: 10px;
+  }
+}
+
+/* Brand Logo */
+.brand-logo {
+  font-family: 'Satisfy', cursive;
+  font-size:2rem;
+  margin-left: 30px;
+  color: #ffdd57 !important;
+  text-shadow: 0 0 10px #ffdd57, 0 0 20px #ffdd57;
+  transition: transform 0.3s ease;
+}
+.brand-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation */
+.navbar-collapse .custom-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin-right: 60px;
+}
+@media (max-width: 991.98px) {
+  .navbar-collapse .custom-nav {
+    justify-content: center;
+  }
+}
+
+/* Nav Links */
+.custom-nav .nav-link {
+  position: relative;
+  color: #f8f8f8 !important;
+  font-weight: 600;
+  margin: 0 12px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+/* Hover + Underline */
+.custom-nav .nav-link:hover {
+  color: #ffdd57 !important;
+  background-color: rgba(255, 221, 87, 0.1);
+  box-shadow: 0 0 10px rgba(255, 221, 87, 0.4);
+  transform: translateY(-1px);
+}
+.custom-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background-color: #ffdd57;
+  border-radius: 5px;
+  transition: width 0.4s ease;
+}
+.custom-nav .nav-link:hover::after {
+  width: 60%;
+}
+
+/* Active link */
+.custom-nav .nav-link.active {
+  background-color: #ffdd57;
+  color: #000 !important;
+  font-weight: 700;
+  box-shadow: 0 0 15px rgba(255, 221, 87, 0.6);
+}
+
+/* Toggle icon */
+.custom-toggle-icon {
+  border: 2px solid #ffdd57;
+  border-radius: 15%;
+  padding: 7.5px;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.custom-toggle-icon:hover {
+  background-color: rgba(255, 221, 87, 0.15);
+  box-shadow: 0 0 18px #ffdd57;
+}
+
+/* Remove default toggle border */
+.navbar-toggler {
+  border: none !important;
+}
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+/* Mobile Nav */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.95);
+    border-radius: 12px;
+    padding: 15px 10px;
+    margin-top: 10px;
+  }
+
+  .custom-nav .nav-link {
+    width: 100%;
+    margin: 10px 0;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* General Utilities */
+.brand-color {
+  color: #ffdd57;
+  font-weight: bold;
+  text-shadow: 0 0 8px #ffdd57;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(45deg, #08001f, #1a1a4d);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}

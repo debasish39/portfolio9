@@ -1,0 +1,14 @@
+/* Footer Styles with Black Background & Gold Glowing Effect */
+
+.footer {
+  background-color: #000;            /* Black background */
+  color: #ffdd57;
+  box-shadow: 0 0 10px rgba(255, 221, 87, 0.7);
+  bottom:0;
+  width: 100%;
+  position: fixed;
+}
+
+.footer small {
+  text-shadow: 0 0 5px #ffdd57;
+}
