@@ -4,10 +4,6 @@ h2 {
     color: #ffdd57;
     text-shadow: 0 0 8px #ffdd57;
   }
-  @import 'swiper/css';
-@import 'swiper/css/navigation';
-@import 'swiper/css/pagination';
-@import 'swiper/css/effect-coverflow';
 
 .scroll-progress {
   position: fixed;

@@ -75,7 +75,7 @@ const Contact = () => {
 
     const data = {
       access_key: import.meta.env.VITE_WEB3FORMS_KEY,
-      subject: 'Contact Message from Portfolio Website',
+      subject: 'Contact form(PORTFOLIO)',
       from_name: 'Portfolio Contact Form',
       name: formData.name,
       email: formData.email,
