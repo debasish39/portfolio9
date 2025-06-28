@@ -1,9 +1,12 @@
-import React from 'react';
-import { Container, Row, Col ,Button} from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 import ProjectCard from '../components/ProjectCard.jsx';
-import './Projects.css'; // Custom CSS for glowing effects
-import { useState,useEffect } from 'react';
-// Import local images
+import './Projects.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { FaArrowUp } from 'react-icons/fa'; // ✅ Import icon
+// projectData.js
+
 import quote from './quote.png';  
 import qr from './qr.png';  
 import txtspeech from './txtspeech.png';  
@@ -13,160 +16,141 @@ import port from './port.png';
 import cal from './cal.png';  
 import tem from './tem.png';  
 import joke from './joke.png';  
-// import SplashCursor from '../SplashCursor.jsx';
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const projectData = [
   {
     title: 'Portfolio Website',
     description: 'A personal portfolio showcasing my skills and projects.',
-    imageUrl: port, 
-    projectUrl: 'https://deba-port.netlify.app/'
+    imageUrl: port,
+    projectUrl: 'https://another.debasish.xyz/'
   },
   {
     title: 'Quote Generator',
     description: 'An app that generates random quotes to inspire you.',
-    imageUrl: quote, 
-    projectUrl: 'https://qu-gen.netlify.app/'
+    imageUrl: quote,
+    projectUrl: 'https://quotes.debasish.xyz/'
   },
   {
     title: 'QR Code Generator',
     description: 'Generate QR codes for any text or link easily.',
-    imageUrl: qr, 
-    projectUrl: 'https://qr-gene.netlify.app/'
+    imageUrl: qr,
+    projectUrl: 'https://qrcode.debasish.xyz/'
   },
   {
     title: 'Text to Speech Converter',
     description: 'Convert text into speech using this simple tool.',
-    imageUrl: txtspeech, 
-    projectUrl: 'https://txtspch.netlify.app/'
+    imageUrl: txtspeech,
+    projectUrl: 'https://texttospeech.debasish.xyz/'
   },
   {
     title: 'To-Do App',
     description: 'A simple to-do list app to manage your tasks efficiently.',
-    imageUrl: TodoApp, 
-    projectUrl: 'https://todo-set.netlify.app/'
+    imageUrl: TodoApp,
+    projectUrl: 'https://todo.debasish.xyz/'
   },
   {
     title: 'Basic Calculator',
     description: 'A simple calculator for basic arithmetic operations.',
-    imageUrl: Calculator, 
-    projectUrl: 'https://calculatordob.netlify.app/'
+    imageUrl: Calculator,
+    projectUrl: 'https://calculator.dob.debasish.xyz/'
   },
   {
     title: 'Advanced Calculator',
     description: 'A more advanced calculator with additional functions.',
-    imageUrl: cal, 
-    projectUrl: 'https://calculaproject.netlify.app/'
+    imageUrl: cal,
+    projectUrl: 'https://calculator.debasish.xyz/'
   },
   {
     title: 'Temperature Converter',
     description: 'Convert temperatures between Celsius, Fahrenheit, and Kelvin.',
-    imageUrl: tem, 
-    projectUrl: 'https://tempeconvert.netlify.app/'
+    imageUrl: tem,
+    projectUrl: 'https://temp.debasish.xyz/'
   },
   {
     title: 'Joke Generator',
     description: 'Get a random joke every time you click the button!',
-    imageUrl: joke, 
-    projectUrl: 'https://joke-gene.netlify.app/'
+    imageUrl: joke,
+    projectUrl: 'https://joke.debasish.xyz/'
   },
 ];
 
+
+
+
 const Projects = () => {
-     const [scrollPercentage, setScrollPercentage] = useState(0); // State to track scroll progress
-      const [showScrollTop, setShowScrollTop] = useState(false); // State to track scroll-to-top button visibility
-    
-      useEffect(() => {
-        // Function to calculate scroll progress percentage and handle button visibility
-        const handleScroll = () => {
-          const scrollPosition = window.scrollY;
-          const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const scrollProgress = (scrollPosition / documentHeight) * 100;
-          setScrollPercentage(scrollProgress);
-    
-          // Show scroll-to-top button if scrolled down 300px
-          if (scrollPosition > 30) {
-            setShowScrollTop(true);
-          } else {
-            setShowScrollTop(false);
-          }
-        };
-    
-        // Add the scroll event listener
-        window.addEventListener("scroll", handleScroll);
-    
-        // Cleanup the event listener when the component is unmounted
-        return () => {
-          window.removeEventListener("scroll", handleScroll);
-        };
-      }, []); // Empty dependency array to ensure it runs only once when the component is mounted
-    
-      // Scroll to top function
-      const scrollToTop = () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth", // Smooth scroll
-        });
-      };
- 
-useEffect(() => {
-  AOS.init({ duration: 1500 });
-}, []);
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [pageLoading, setPageLoading] = useState(true);
+
+  useEffect(() => {
+    AOS.init({ duration: 800, once: false });
+
+    const timer = setTimeout(() => {
+      setPageLoading(false);
+    }, 150);
+
+    const handleScroll = () => {
+      const pos = window.scrollY;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollPercentage((pos / docH) * 100);
+      setShowScrollTop(pos > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  if (pageLoading) {
+    return (
+      <div className="spinner-container">
+        <Spinner animation="border" variant="warning" role="status" >
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+        <p>Loading projects...</p>
+      </div>
+    );
+  }
 
   return (
-    <Container className="mt-3">
+    <Container className="mt-5 mb-5 pb-5">
       {/* Scroll Progress Bar */}
       <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: `${scrollPercentage}%`,
-          height: "3px",
-          backgroundColor: " #ffeb3b",
-          zIndex: 9999, // Ensure it's on top
-        }}
-      ></div>
-      {/* <SplashCursor/> */}
-      <h2 className="mb-4">My Projects</h2>
-     <Row>
-  {projectData.map((project, index) => (
-    <Col
-      xs={12}
-      key={index}
-      data-aos={index % 2 === 0 ? "fade-right" : "fade-left"} // Alternate direction
-      data-aos-delay={index * 100} // Delay increases per card (optional smooth effect)
-    >
-      <ProjectCard {...project} />
-    </Col>
-  ))}
-</Row>
+        className="scroll-progress mb-3"
+        style={{ width: `${scrollPercentage}%` }}
+      />
 
+      <h2 className="section-title mb-5 text-center">🚀 My Projects</h2>
 
+      <Row className="gy-4 mb-3">
+        {projectData.map((project, index) => (
+          <Col
+            key={index}
+            xs={12}
+            sm={6}
+            md={4}
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+          >
+            <ProjectCard {...project} />
+          </Col>
+        ))}
+      </Row>
 
+      {/* ✅ Updated with Icon */}
       {showScrollTop && (
-            <Button
-                    onClick={scrollToTop}
-                    style={{
-                      position: "fixed",
-                      bottom: "90px",
-                      right: "39px",
-                      zIndex: 9999,
-                      backgroundColor: "#ffe32b",
-                      border: "none",
-                      borderRadius: "60%",
-                      padding: "12px",
-                      boxShadow: "0 2px 99px yellow",
-                      fontSize: "23px", // Increased from 18px to 32px
-                      fontWeight: '900',
-                    }}
-                    data-aos="fade-left"
-                  >
-                    ↑
-                  </Button>
-              )}
+        <Button
+          onClick={scrollToTop}
+          className="scroll-top-btn btn-outline-warning"
+          data-aos="fade-down"
+        >
+          <FaArrowUp />
+        </Button>
+      )}
     </Container>
   );
 };
