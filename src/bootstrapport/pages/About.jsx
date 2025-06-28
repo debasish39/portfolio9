@@ -1,16 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Button } from "react-bootstrap";
+import { Container, Row, Button, Spinner } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "./About.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FaArrowUp } from "react-icons/fa";
 
 const About = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Spinner state
 
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // Init AOS animation
+    AOS.init({ duration: 1000 });
+
+    // Simulated loading delay
+    const loadingTimer = setTimeout(() => {
+      setIsLoading(false);
+    }, 150);
+
+    return () => clearTimeout(loadingTimer);
   }, []);
 
   useEffect(() => {
@@ -30,8 +39,17 @@ const About = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  if (isLoading) {
+    return (
+      <div className="spinner-container">
+        <Spinner animation="border" variant="warning" />
+        <p>Loading About Section...</p>
+      </div>
+    );
+  }
+
   return (
-    <Container className="mt-3 px-3" >
+    <Container className="mt-3 px-3">
       {/* Scroll Progress Bar */}
       <div
         style={{
@@ -45,10 +63,7 @@ const About = () => {
         }}
       ></div>
 
-      <Row
-        style={{ marginTop: "1px", marginBottom: "99px" }}
-        data-aos="fade-up"
-      >
+      <Row style={{ marginTop: "1px", marginBottom: "99px" }} data-aos="fade-up">
         <h1 data-aos="zoom-in">About Me</h1>
         <p data-aos="fade-right">
           I'm a web developer passionate about crafting visually appealing and
@@ -73,24 +88,12 @@ const About = () => {
       </Row>
 
       {showScrollTop && (
-       <Button
+     <Button
   onClick={scrollToTop}
-  style={{
-    position: "fixed",
-    bottom: "90px",
-    right: "39px",
-    zIndex: 9999,
-    backgroundColor: "#ffe32b",
-    border: "none",
-    borderRadius: "60%",
-    padding: "12px",
-    boxShadow: "0 2px 99px yellow",
-    fontSize: "23px", // Increased from 18px to 32px
-    fontWeight: '900',
-  }}
-  data-aos="fade-left"
+  className="scroll-top-btn btn-outline-warning d-flex align-items-center justify-content-center"
+  data-aos="fade-down"
 >
-  ↑
+  <FaArrowUp />
 </Button>
 
       )}
