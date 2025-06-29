@@ -87,7 +87,7 @@ const Contact = () => {
       });
 
       if (response.data.success) {
-        toast.success(' Submission Sent.');
+        toast.success(' Submission Successful.');
         setSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
       } else {
