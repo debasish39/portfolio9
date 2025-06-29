@@ -10,6 +10,20 @@ h2 {
   text-align: center;
   margin-bottom: 30px;
 }
+.Toastify__toast--success {
+  background: #000 !important;     /* Black background */
+  color: #ffeb3b !important;       /* Bright yellow text */
+  font-weight: bold;
+  border: 2px solid #ffeb3b !important;
+  box-shadow: 0 0 15px rgba(255, 235, 59, 0.4);
+}
+.Toastify__toast--error {
+  background: #000 !important;     /* Black background */
+  color: #b51004 !important;       /* Bright yellow text */
+  font-weight: bold;
+  border: 2px solid #1a1808 !important;
+  box-shadow: 0 0 15px rgba(159, 42, 7, 0.4);
+}
 
 .form-label {
   color: #eee;
@@ -84,7 +98,9 @@ iframe {
   width: 100%;
   max-width: 100%;
 }
-
+iframe:hover{
+  box-shadow: 3px 3px 12px yellow;
+}
 button[style*="position: fixed"] {
   color: #000;
   transition: transform 0.3s ease;
@@ -102,9 +118,16 @@ button[style*="position: fixed"]:hover {
     margin-bottom: 100px;
   }
 
-  iframe {
-    height: 300px;
-  }
+iframe {
+  height: 300px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 221, 87, 0.4); /* glowing yellowish shadow */
+  border: none; /* optional: remove border if any */
+}
+iframe:hover{
+box-shadow:0 0 30px rgba(255, 221, 87, 0.8);
+}
 
   h2 {
     font-size: 24px;
