@@ -72,8 +72,8 @@ const Home = () => {
   words={[
     '💻 React.js Frontend Developer',
 
-    '🧰 PostgreSQL & MySQL Expert',
-    '📊 Custom Admin Panel Builder',
+    '🧰 MySQL Expert',
+    
 
     '🐍 Django & Python Developer',
     '📦 Django REST Framework Expert',
