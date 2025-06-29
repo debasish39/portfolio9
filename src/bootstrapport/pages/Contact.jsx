@@ -4,7 +4,6 @@ import {
   Container,
   Form,
   Button,
-  Alert,
   OverlayTrigger,
   Tooltip,
   InputGroup,
@@ -20,27 +19,27 @@ import {
   FaCommentDots,
   FaPaperPlane,
   FaAddressBook,
-  FaArrowUp, // ✅ Add this
+  FaArrowUp,
 } from 'react-icons/fa';
-
 
 import './Contact.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false); // form submission loading
-  const [pageLoading, setPageLoading] = useState(true); // full page loading
+  const [loading, setLoading] = useState(false);
+  const [pageLoading, setPageLoading] = useState(true);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
 
-    // Simulate page load done after AOS init and any other setup (e.g., 1.2s delay)
     const timer = setTimeout(() => {
       setPageLoading(false);
     }, 150);
@@ -71,7 +70,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Start loading
+    setLoading(true);
 
     const data = {
       access_key: import.meta.env.VITE_WEB3FORMS_KEY,
@@ -88,29 +87,28 @@ const Contact = () => {
       });
 
       if (response.data.success) {
+        toast.success(' Submission Sent.');
         setSubmitted(true);
-        setError('');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setError('Submission failed. Check your access key and try again.');
+        toast.error(' Submission failed. ');
       }
     } catch (err) {
       console.error('Web3Forms Error:', err);
-      setError('Something went wrong while sending your message.');
+      toast.error(' Submission failed.');
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false);
     }
   };
 
-    if (pageLoading) {
-      return (
-        <div className="spinner-container">
-          <Spinner animation="border" variant="warning" />
-          <p>Loading contact form...</p>
-        </div>
-      );
-    }
-  
+  if (pageLoading) {
+    return (
+      <div className="spinner-container">
+        <Spinner animation="border" variant="warning" />
+        <p>Loading contact form...</p>
+      </div>
+    );
+  }
 
   return (
     <Container className="mt-5 mb-5 contact-container">
@@ -132,18 +130,6 @@ const Contact = () => {
         <FaAddressBook className="heading-icon" />
         <span>Contact Me</span>
       </h2>
-
-      {submitted && (
-        <Alert variant="success" data-aos="fade-up">
-          ✅ Thank you! Your message has been sent.
-        </Alert>
-      )}
-
-      {error && (
-        <Alert variant="danger" data-aos="fade-up">
-          ❌ {error}
-        </Alert>
-      )}
 
       <Form onSubmit={handleSubmit} data-aos="fade-up" noValidate>
         <input type="hidden" name="botcheck" style={{ display: 'none' }} />
@@ -197,7 +183,7 @@ const Contact = () => {
           </InputGroup>
         </Form.Group>
 
-        {/* Send Message Button */}
+        {/* Submit Button */}
         <div className="submit-button-wrapper text-center mt-4" data-aos="zoom-in">
           <Button
             variant="warning"
@@ -268,16 +254,29 @@ const Contact = () => {
       </div>
 
       {/* Scroll to Top */}
-     {showScrollTop && (
-  <Button
-    onClick={scrollToTop}
-    className="scroll-top-btn btn-outline-warning"
-    data-aos="fade-down"
-  >
-    <FaArrowUp />
-  </Button>
-)}
+      {showScrollTop && (
+        <Button
+          onClick={scrollToTop}
+          className="scroll-top-btn btn-outline-warning"
+          data-aos="fade-down"
+        >
+          <FaArrowUp />
+        </Button>
+      )}
 
+      {/* Toast Container */}
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      style={{marginBottom:'12px'}}/>
     </Container>
   );
 };
