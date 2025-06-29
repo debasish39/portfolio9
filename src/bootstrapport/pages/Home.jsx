@@ -68,24 +68,29 @@ const Home = () => {
         </h1>
 
         <p className="hero-subtext">
-        <Typewriter
+ <Typewriter
   words={[
-     '🐍 Django Developer',
-    '🚀 Full-Stack Engineer',
-    '🧠 Python Problem Solver',
-    '🌐 REST API Architect',
-    '📦 DRF (Django REST Framework) Pro',
-    '🛠️ Backend Specialist',
-    '💻 React.js Frontend',
-    '🧰 Postgres & MySQL Wizard',
-    '☁️ Deployed on Heroku & AWS',
-    '🔐 Authentication & Security Focused',
-    '📄 Clean & Scalable Code Advocate',
-    '🔍 Debugging Ninja',
-    '📊 Admin Panel Customizer',
-    '🧪 Unit & Integration Tester',
-    '📈 Continuous Learner',
-    '⚙️ Git & CI/CD Practitioner',
+    '💻 React.js Frontend Developer',
+
+    '🧰 PostgreSQL & MySQL Expert',
+    '📊 Custom Admin Panel Builder',
+
+    '🐍 Django & Python Developer',
+    '📦 Django REST Framework Expert',
+    '🌐 RESTful API Specialist',
+    '🧠 Scalable Backend Architect',
+
+    '☁️ Deployments on AWS & Heroku',
+    '⚙️ Git, CI/CD & DevOps Ready',
+
+    '🛠️ Clean Code Enthusiast',
+    '📄 Maintainable Code Advocate',
+    '🧪 Unit & Integration Testing Pro',
+    '🔍 Expert Debugger & Optimizer',
+
+    '🔐 Auth & Security-Focused Engineer',
+
+    '📈 Continuous Learning Mindset',
   ]}
   loop={0}
   cursor
@@ -94,6 +99,7 @@ const Home = () => {
   deleteSpeed={50}
   delaySpeed={1000}
 />
+
 
         </p>
 
