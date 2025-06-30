@@ -12,7 +12,7 @@ h2 {
 }
 .Toastify__toast--success {
   background: #000 !important;     /* Black background */
-  color: #FFC107 !important;       /* Bright yellow text */
+  color: #07BC0C !important;       /* Bright yellow text */
   font-weight: bold;
   border: 2px solid #1a0401 !important;
   box-shadow: 0 0 15px rgba(56, 22, 13, 0.4);
