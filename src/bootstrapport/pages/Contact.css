@@ -24,7 +24,20 @@ h2 {
   border: 2px solid #1a1808 !important;
   box-shadow: 0 0 15px rgba(159, 42, 7, 0.4);
 }
+/* Push the toast down to clear the navbar */
+/* Push toast down below fixed navbar */
+.Toastify__toast-container--top-right {
+  top: 70px !important; /* Adjust this value to match your navbar height */
+  right: 1rem;
+  z-index: 9999;
+}
 
+@media (max-width: 768px) {
+   .Toastify__toast-container--top-right  {
+    top: 78px !important; /* For mobile navbar height */
+    width:12px;
+  }
+}
 .form-label {
   color: #eee;
   text-shadow: 0 0 5px #ffdd57;
