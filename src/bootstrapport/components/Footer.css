@@ -1,14 +1,33 @@
-/* Footer Styles with Black Background & Gold Glowing Effect */
-
+/* Gradient Footer with Gold Glow */
 .footer {
-  background-color: #000;            /* Black background */
-  color: #ffdd57;
-  box-shadow: 0 0 10px rgba(255, 221, 87, 0.7);
-  bottom:0;
-  width: 100%;
+  background: linear-gradient(90deg, #000000, #2c2c1f); /* Black to dark gold tone */
+  color: #ffd700;                                       /* Bright gold text */
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);          /* Soft gold glow */
   position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 16px 24px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1000;
+  border-top: 1px solid rgba(255, 215, 0, 0.3);         /* Subtle top border */
 }
 
+/* Glowing text */
 .footer small {
-  text-shadow: 0 0 5px #ffdd57;
+  font-size: 0.85rem;
+  letter-spacing: 0.6px;
+  text-shadow: 0 0 6px rgba(255, 215, 0, 0.8);
+}
+
+/* Optional: Footer links */
+.footer a {
+  color: #ffd700;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #fffacd; /* Light golden on hover */
 }
