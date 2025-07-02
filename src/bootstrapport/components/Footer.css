@@ -1,33 +1,52 @@
-/* Gradient Footer with Gold Glow */
+/* ===============================
+   ✨ Glowing Footer Styles
+   =============================== */
 .footer {
-  background: linear-gradient(90deg, #000000, #2c2c1f); /* Black to dark gold tone */
-  color: #ffd700;                                       /* Bright gold text */
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);          /* Soft gold glow */
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 16px 24px;
+  background-color: #000000;
+  color: #ffdd57;
+  padding: 0.5rem 1.2rem;
+  box-shadow: 0 0 20px rgba(255, 221, 87, 0.4), 0 0 40px rgba(255, 221, 87, 0.2);
+  z-index: 999;
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  z-index: 1000;
-  border-top: 1px solid rgba(255, 215, 0, 0.3);         /* Subtle top border */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  border-top: 1px solid rgba(255, 221, 87, 0.2);
+  backdrop-filter: blur(6px); /* subtle glass effect */
 }
 
-/* Glowing text */
+/* Footer Text Styling */
 .footer small {
-  font-size: 0.85rem;
-  letter-spacing: 0.6px;
-  text-shadow: 0 0 6px rgba(255, 215, 0, 0.8);
+  display: block;
+  text-shadow: 0 0 6px #ffdd57;
+  font-weight: 500;
 }
 
-/* Optional: Footer links */
+/* Hover Effect for Any Links Inside */
 .footer a {
-  color: #ffd700;
-  margin: 0 10px;
+  color: #ffdd57;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .footer a:hover {
-  color: #fffacd; /* Light golden on hover */
+  color: #fffbe6;
+  text-shadow: 0 0 10px #ffdd57;
+}
+
+/* ===============================
+   📱 Responsive
+   =============================== */
+@media (max-width: 576px) {
+  .footer {
+    font-size: 0.8rem;
+    padding: 0.2rem 1rem;
+  }
+
+  .footer small {
+    font-size: 0.75rem;
+  }
 }
