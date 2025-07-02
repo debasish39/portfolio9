@@ -211,25 +211,25 @@ const Contact = () => {
     <div className="social-media-icons mt-5 mb-4" data-aos="slide-right">
   <OverlayTrigger placement="left" overlay={<Tooltip>LinkedIn</Tooltip>}>
     <a href="https://www.linkedin.com/in/debasish-panda-857715314/" target="_blank" rel="noopener noreferrer">
-      <FaLinkedin size={30} style={{ color: '#0077B5' }} className="icon" />
+      <FaLinkedin size={30}  className="icon" />
     </a>
   </OverlayTrigger>
 
   <OverlayTrigger placement="top" overlay={<Tooltip>Instagram</Tooltip>}>
     <a href="https://www.instagram.com/deba_963" target="_blank" rel="noopener noreferrer">
-      <FaInstagram size={30} style={{ color: '#E1306C' }} className="icon" />
+      <FaInstagram size={30} className="icon" />
     </a>
   </OverlayTrigger>
 
   <OverlayTrigger placement="top" overlay={<Tooltip>GitHub</Tooltip>}>
     <a href="https://github.com/debasish39" target="_blank" rel="noopener noreferrer">
-      <FaGithub size={30} style={{ color: 'black',backgroundColor:'white',borderRadius:'30px' }} className="icon" />
+      <FaGithub size={30}  className="icon" />
     </a>
   </OverlayTrigger>
 
   <OverlayTrigger placement="right" overlay={<Tooltip>Email</Tooltip>}>
     <a href="mailto:djproject963@gmail.com" target="_blank" rel="noopener noreferrer">
-      <FaEnvelope size={30} style={{ color: '#D44638' }} className="icon" />
+      <FaEnvelope size={30}  className="icon" />
     </a>
   </OverlayTrigger>
 </div>
