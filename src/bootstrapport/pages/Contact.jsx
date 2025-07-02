@@ -208,7 +208,7 @@ const Contact = () => {
     </Form>
 
      {/* Social Media Icons */}
-    <div className="social-media-icons mt-5 mb-4" data-aos="slide-right">
+    <div className="social-media-icons mt-5 mb-4" data-aos="fade-up">
   <OverlayTrigger placement="left" overlay={<Tooltip>LinkedIn</Tooltip>}>
     <a href="https://www.linkedin.com/in/debasish-panda-857715314/" target="_blank" rel="noopener noreferrer">
       <FaLinkedin size={30}  className="icon" />
@@ -238,7 +238,7 @@ const Contact = () => {
 
 
     {/* Google Map */}
-    <div data-aos="slide-right" className="mt-4 mb-5 pb-3">
+    <div data-aos="fade-up" className="mt-4 mb-5 pb-3">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15035.965900818937!2d84.92123115008701!3d19.58486590002057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a22aa1346b86037%3A0xe6bbe14384e1ea42!2sChingudi%20Ghai%2C%20Odisha%20761018!5e0!3m2!1sen!2sin!4v1751424835153!5m2!1sen!2sin" width="100%"
   height="450"
   style={{ border: 0 }}
