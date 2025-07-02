@@ -1,45 +1,29 @@
-/* Projects Page Heading with Gold Glowing Effect */
+/* ===============================
+   🔥 PROJECTS PAGE DESIGN
+   =============================== */
 
-h2 {
-    color: #ffdd57;
-    text-shadow: 0 0 8px #ffdd57;
-  }
-
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  height: 3px;
-  background-color: #ffeb3b;
-  z-index: 9999;
-  left: 0;
-}
-
-.scroll-top-btn {
-  position: fixed;
-  bottom: 90px;
-  right: 39px;
-  background-color: #ffe32b;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 14px;
-  font-size: 23px;
-  font-weight: 900;
-  box-shadow: 0 2px 99px yellow;
-  z-index: 9999;
-  transition: transform 0.3s ease;
-}
-.scroll-top-btn:hover {
-  transform: scale(1.1);
+/* Background and Layout */
+.project-wrapper {
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  background: linear-gradient(to left bottom, #000000, #110d0d, #111001);
+  background-size: 400% 400%;
+  animation: aboutGradientFlow 20s ease infinite;
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Ensure Swiper looks great */
-.swiper {
-  padding-top: 20px;
-  padding-bottom: 40px;
+/* Heading Glow */
+.project-wrapper h2,
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffeb3b;
+  text-shadow: 0 0 12px #ffeb3b88;
+  margin-bottom: 2rem;
 }
-.swiper-slide {
-  width: 300px;
-}
+
+/* Scroll Progress Bar */
 .scroll-progress {
   position: fixed;
   top: 0;
@@ -50,6 +34,7 @@ h2 {
   transition: width 0.3s ease;
 }
 
+/* Scroll to Top Button */
 .scroll-top-btn {
   position: fixed;
   bottom: 90px;
@@ -58,22 +43,29 @@ h2 {
   border: none;
   border-radius: 8px;
   padding: 10px 14px;
-  box-shadow: 0 2px 99px rgb(255, 255, 0);
+  box-shadow: 0 0 30px #ffeb3b;
   font-size: 23px;
   font-weight: 900;
+  color: white;
   z-index: 9999;
+  transition: transform 0.3s ease;
 }
 
 .scroll-top-btn:hover {
   transform: scale(1.1);
+  box-shadow: 0 0 45px #ffeb3b;
 }
 
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #ffeb3b;
-  text-shadow: 0 0 10px #ffeb3b88;
+/* Swiper Styles */
+.swiper {
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
+.swiper-slide {
+  width: 300px;
+}
+
+/* Spinner Loader */
 .spinner-container {
   height: 100vh;
   display: flex;
@@ -85,4 +77,46 @@ h2 {
   color: #ffeb3b;
   font-family: 'Fira Code', monospace;
   font-size: 1.2rem;
+}
+
+/* ===============================
+   🌐 RESPONSIVE DESIGN
+   =============================== */
+@media screen and (max-width: 768px) {
+  .project-wrapper {
+    padding: 2rem 1rem;
+  }
+
+  .section-title,
+  .project-wrapper h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .scroll-top-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 12px;
+    font-size: 18px;
+  }
+
+  .swiper-slide {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+
+/* ===============================
+   ✨ ANIMATIONS
+   =============================== */
+@keyframes aboutGradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
