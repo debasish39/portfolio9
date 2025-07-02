@@ -3,16 +3,24 @@ body {
   color: #eee;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-h2 {
+.contact-wrapper {
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  background: linear-gradient(to left bottom, #000000, #110d0d, #111001);
+  background-size: 400% 400%;
+  animation: aboutGradientFlow 20s ease infinite;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+/* .contact-wrapper h2 {
   color: #ffdd57;
   text-shadow: 0 0 8px #ffdd57;
   text-align: center;
   margin-bottom: 30px;
-}
+} */
 .Toastify__toast--success {
   background: #000 !important;     /* Black background */
-  color: #07BC0C !important;       /* Bright yellow text */
+  color:#07BC0C !important;       /* Bright yellow text */
   font-weight: bold;
   border: 2px solid #1a0401 !important;
   box-shadow: 0 0 15px rgba(56, 22, 13, 0.4);
@@ -24,20 +32,7 @@ h2 {
   border: 2px solid #1a1808 !important;
   box-shadow: 0 0 15px rgba(159, 42, 7, 0.4);
 }
-/* Push the toast down to clear the navbar */
-/* Push toast down below fixed navbar */
-.Toastify__toast-container--top-right {
-  top: 70px !important; /* Adjust this value to match your navbar height */
-  right: 1rem;
-  z-index: 9999;
-}
 
-@media (max-width: 768px) {
-   .Toastify__toast-container--top-right  {
-    top: 78px !important; /* For mobile navbar height */
-    width:12px;
-  }
-}
 .form-label {
   color: #eee;
   text-shadow: 0 0 5px #ffdd57;
@@ -89,9 +84,24 @@ h2 {
   color: #ffdd57;
   transition: color 0.3s ease, transform 0.3s ease;
 }
+/* Push the toast down to clear the navbar */
+/* Push toast down below fixed navbar */
+.Toastify__toast-container--top-right {
+  top: 70px !important; /* Adjust this value to match your navbar height */
+  right: 1rem;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+   .Toastify__toast-container--top-right  {
+    top: 78px !important; /* For mobile navbar height */
+    width:12px;
+  }
+}
+
 
 .social-media-icons a:hover {
-  color: #ffc107;
+  color: #b18a16;
   transform: scale(1.1);
 }
 
