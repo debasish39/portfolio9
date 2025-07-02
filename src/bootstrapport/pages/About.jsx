@@ -49,6 +49,7 @@ const About = () => {
   }
 
   return (
+    <div className="about-wrapper">
     <Container className="mt-3 px-3">
       {/* Scroll Progress Bar */}
       <div
@@ -58,7 +59,7 @@ const About = () => {
           left: 0,
           width: `${scrollPercentage}%`,
           height: "3px",
-          backgroundColor: "#ffeb3b",
+         background: 'linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e)',
           zIndex: 9999,
         }}
       ></div>
@@ -98,6 +99,7 @@ const About = () => {
 
       )}
     </Container>
+    </div>
   );
 };
 
