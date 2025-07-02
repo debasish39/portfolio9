@@ -111,174 +111,164 @@ const Contact = () => {
   }
 
   return (
-    <Container className="mt-5 mb-5 contact-container">
-      {/* Scroll Progress Bar */}
-      <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: `${scrollPercentage}%`,
-          height: '3px',
-          backgroundColor: '#ffeb3b',
-          zIndex: 9999,
-        }}
-      ></div>
+<div className="contact-wrapper">
+  <Container className="mt-5 mb-5 contact-container">
 
-      {/* Heading */}
-      <h2 className="contact-heading" data-aos="zoom-in">
-        <FaAddressBook className="heading-icon" />
-        <span>Contact Me</span>
-      </h2>
+    {/* Scroll Progress Bar */}
+    <div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: `${scrollPercentage}%`,
+        height: '3px',
+        backgroundColor: '#ffeb3b',
+        zIndex: 9999,
+      }}
+    />
 
-      <Form onSubmit={handleSubmit} data-aos="fade-up" noValidate>
-        <input type="hidden" name="botcheck" style={{ display: 'none' }} />
+    {/* Heading */}
+    <h2 className="contact-heading" data-aos="zoom-in-up">
+      <FaAddressBook className="heading-icon" />
+      <span>Contact Me</span>
+    </h2>
 
-        {/* Name */}
-        <Form.Group controlId="contactName" className="mb-3" data-aos="fade-right">
-          <Form.Label>Name</Form.Label>
-          <InputGroup>
-            <InputGroup.Text className="input-icon"><FaUser /></InputGroup.Text>
-            <Form.Control
-              type="text"
-              placeholder="Your name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </InputGroup>
-        </Form.Group>
+    {/* Form */}
+    <Form onSubmit={handleSubmit} data-aos="flip-up" noValidate>
+      <input type="hidden" name="botcheck" style={{ display: 'none' }} />
 
-        {/* Email */}
-        <Form.Group controlId="contactEmail" className="mb-3" data-aos="fade-left">
-          <Form.Label>Email</Form.Label>
-          <InputGroup>
-            <InputGroup.Text className="input-icon"><FaRegEnvelope /></InputGroup.Text>
-            <Form.Control
-              type="email"
-              placeholder="Your email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </InputGroup>
-        </Form.Group>
+      {/* Name */}
+      <Form.Group controlId="contactName" className="mb-3" data-aos="fade-down-right">
+        <Form.Label>Name</Form.Label>
+        <InputGroup>
+          <InputGroup.Text className="input-icon"><FaUser /></InputGroup.Text>
+          <Form.Control
+            type="text"
+            placeholder="Your name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </InputGroup>
+      </Form.Group>
 
-        {/* Message */}
-        <Form.Group controlId="contactMessage" className="mb-3" data-aos="fade-up">
-          <Form.Label>Message</Form.Label>
-          <InputGroup>
-            <InputGroup.Text className="input-icon"><FaCommentDots /></InputGroup.Text>
-            <Form.Control
-              as="textarea"
-              rows={2}
-              placeholder="Your message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            />
-          </InputGroup>
-        </Form.Group>
+      {/* Email */}
+      <Form.Group controlId="contactEmail" className="mb-3" data-aos="fade-up-left">
+        <Form.Label>Email</Form.Label>
+        <InputGroup>
+          <InputGroup.Text className="input-icon"><FaRegEnvelope /></InputGroup.Text>
+          <Form.Control
+            type="email"
+            placeholder="Your email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </InputGroup>
+      </Form.Group>
 
-        {/* Submit Button */}
-        <div className="submit-button-wrapper text-center mt-4" data-aos="zoom-in">
-          <Button
-            variant="warning"
-            type="submit"
-            className="submit-button d-flex align-items-center justify-content-center gap-2"
-            disabled={loading}
-          >
-            {loading ? (
-              <>
-                <Spinner
-                  as="span"
-                  animation="border"
-                  size="sm"
-                  role="status"
-                  aria-hidden="true"
-                />
-                Sending...
-              </>
-            ) : (
-              <>
-                <FaPaperPlane />
-                Send Message
-              </>
-            )}
-          </Button>
-        </div>
-      </Form>
+      {/* Message */}
+      <Form.Group controlId="contactMessage" className="mb-3" data-aos="flip-left">
+        <Form.Label>Message</Form.Label>
+        <InputGroup>
+          <InputGroup.Text className="input-icon"><FaCommentDots /></InputGroup.Text>
+          <Form.Control
+            as="textarea"
+            rows={2}
+            placeholder="Your message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
+        </InputGroup>
+      </Form.Group>
 
-      {/* Social Media Icons */}
-      <div className="social-media-icons mt-5 mb-4" data-aos="fade-up">
-        <OverlayTrigger placement="top" overlay={<Tooltip>LinkedIn</Tooltip>}>
-          <a href="https://www.linkedin.com/in/debasish-panda-857715314/" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin size={30} className="icon" />
-          </a>
-        </OverlayTrigger>
-
-        <OverlayTrigger placement="top" overlay={<Tooltip>Instagram</Tooltip>}>
-          <a href="https://www.instagram.com/deba_963" target="_blank" rel="noopener noreferrer">
-            <FaInstagram size={30} className="icon" />
-          </a>
-        </OverlayTrigger>
-
-        <OverlayTrigger placement="top" overlay={<Tooltip>GitHub</Tooltip>}>
-          <a href="https://github.com/debasish39" target="_blank" rel="noopener noreferrer">
-            <FaGithub size={30} className="icon" />
-          </a>
-        </OverlayTrigger>
-
-        <OverlayTrigger placement="top" overlay={<Tooltip>Email</Tooltip>}>
-          <a href="mailto:djproject963@gmail.com" target="_blank" rel="noopener noreferrer">
-            <FaEnvelope size={30} className="icon" />
-          </a>
-        </OverlayTrigger>
-      </div>
-
-      {/* Google Map Embed */}
-      <div data-aos="fade-up" className="mt-4 mb-5 pb-3">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2907.365421432524!2d84.92355215!3d19.583733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a22aa1346b86037%3A0xe6bbe14384e1ea42!2sChingudi%20Ghai%2C%20Odisha%20761018!5e1!3m2!1sen!2sin!4v1751078157403!5m2!1sen!2sin"
-          width="100%"
-          height="450"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Google Map - Chingudi Ghai"
-        ></iframe>
-      </div>
-
-      {/* Scroll to Top */}
-      {showScrollTop && (
+      {/* Submit Button */}
+      <div className="submit-button-wrapper text-center mt-4" data-aos="zoom-in">
         <Button
-          onClick={scrollToTop}
-          className="scroll-top-btn btn-outline-warning"
-          data-aos="fade-down"
+          variant="warning"
+          type="submit"
+          className="submit-button d-flex align-items-center justify-content-center gap-2"
+          disabled={loading}
         >
-          <FaArrowUp />
+          {loading ? (
+            <>
+              <Spinner animation="border" size="sm" /> Sending...
+            </>
+          ) : (
+            <>
+              <FaPaperPlane /> Send Message
+            </>
+          )}
         </Button>
-      )}
+      </div>
+    </Form>
 
-      {/* Toast Container */}
+     {/* Social Media Icons */}
+    <div className="social-media-icons mt-5 mb-4" data-aos="slide-right">
+  <OverlayTrigger placement="left" overlay={<Tooltip>LinkedIn</Tooltip>}>
+    <a href="https://www.linkedin.com/in/debasish-panda-857715314/" target="_blank" rel="noopener noreferrer">
+      <FaLinkedin size={30} style={{ color: '#0077B5' }} className="icon" />
+    </a>
+  </OverlayTrigger>
+
+  <OverlayTrigger placement="top" overlay={<Tooltip>Instagram</Tooltip>}>
+    <a href="https://www.instagram.com/deba_963" target="_blank" rel="noopener noreferrer">
+      <FaInstagram size={30} style={{ color: '#E1306C' }} className="icon" />
+    </a>
+  </OverlayTrigger>
+
+  <OverlayTrigger placement="top" overlay={<Tooltip>GitHub</Tooltip>}>
+    <a href="https://github.com/debasish39" target="_blank" rel="noopener noreferrer">
+      <FaGithub size={30} style={{ color: 'black',backgroundColor:'white',borderRadius:'30px' }} className="icon" />
+    </a>
+  </OverlayTrigger>
+
+  <OverlayTrigger placement="right" overlay={<Tooltip>Email</Tooltip>}>
+    <a href="mailto:djproject963@gmail.com" target="_blank" rel="noopener noreferrer">
+      <FaEnvelope size={30} style={{ color: '#D44638' }} className="icon" />
+    </a>
+  </OverlayTrigger>
+</div>
+
+
+
+
+    {/* Google Map */}
+    <div data-aos="slide-right" className="mt-4 mb-5 pb-3">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15035.965900818937!2d84.92123115008701!3d19.58486590002057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a22aa1346b86037%3A0xe6bbe14384e1ea42!2sChingudi%20Ghai%2C%20Odisha%20761018!5e0!3m2!1sen!2sin!4v1751424835153!5m2!1sen!2sin" width="100%"
+  height="450"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  title="Google Map - Chingudi Ghai"></iframe>
+    </div>
+
+    {/* Scroll to Top */}
+    {showScrollTop && (
+      <Button
+        onClick={scrollToTop}
+        className="scroll-top-btn btn-outline-warning"
+        data-aos="fade-down"
+      >
+        <FaArrowUp />
+      </Button>
+    )}
+
+    {/* Toast */}
     <ToastContainer
-  position="top-right"
-  autoClose={3000}
-  hideProgressBar={false}
-  newestOnTop={false}
-  closeOnClick
-  rtl={false}
-  pauseOnFocusLoss
-  draggable
-  pauseOnHover
-  toastClassName="custom-toast"
-  bodyClassName="custom-toast-body"
-/>
-    </Container>
+      position="top-right"
+      autoClose={3000}
+      toastClassName="custom-toast"
+      bodyClassName="custom-toast-body"
+    />
+  </Container>
+</div>
+
   );
 };
 
