@@ -101,6 +101,64 @@ body {
 .btn-link.white {
   color: white;
 }
+@media screen and (max-width: 768px) {
+  .alt-home-hero {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 9vh;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+  }
+
+  .hero-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+  }
+
+  .hero-heading span {
+    color: #ffeb3b;
+    text-shadow: 0 0 15px #ffeb3b;
+  }
+
+  .hero-left {
+    margin-bottom: 2rem;
+  }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-subtext {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .scroll-top-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
 
 .scroll-top-btn {
   position: fixed;
