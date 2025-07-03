@@ -14,8 +14,8 @@ const MyNavbar = () => {
   const [showModal, setShowModal] = useState(false);
 
   const handleToggle = () => {
-    setShowModal(prev => !prev);
-    setExpanded(prev => !prev);
+    setShowModal((prev) => !prev);
+    setExpanded((prev) => !prev);
   };
 
   const handleNavLinkClick = () => {
@@ -38,54 +38,40 @@ const MyNavbar = () => {
 
   return (
     <>
-      {/* ===== Desktop Navbar ===== */}
       <Navbar
         expanded={expanded}
         expand="lg"
         className={`custom-navbar shadow-lg fixed-top ${visible ? 'navbar-show' : 'navbar-hide'}`}
-        data-aos="fade-down"
       >
         <Container fluid>
-          <Navbar.Brand
-            as={Link}
-            to="/"
+          <Navbar.Brand 
+            as={Link} 
+            to="/" 
             className="brand-logo"
-            data-aos="zoom-in-right"
-            data-aos-delay="100"
           >
             Debasish
           </Navbar.Brand>
 
           {/* Toggle icon */}
-          <Navbar.Toggle
-            onClick={handleToggle}
-            aria-controls="navbar-nav"
-            data-aos="fade-left"
-            data-aos-delay="200"
-          >
+          <Navbar.Toggle onClick={handleToggle} aria-controls="navbar-nav">
             <span className="custom-toggle-icon">
-              {!showModal && <FiMenu size={30} />}
+              {showModal ? '' : <FiMenu size={30} />}
             </span>
           </Navbar.Toggle>
 
-          {/* Large screen links */}
-          <Navbar.Collapse
-            id="navbar-nav"
-            className="d-none d-lg-flex"
-            data-aos="fade-left"
-            data-aos-delay="300"
-          >
+          {/* Large screen nav links only */}
+          <Navbar.Collapse id="navbar-nav" className="d-none d-lg-flex">
             <Nav className="custom-nav ms-auto" onClick={handleNavLinkClick}>
-              <Nav.Link as={NavLink} to="/" end data-aos="fade-down" data-aos-delay="350">
+              <Nav.Link as={NavLink} to="/" end data-aos="fade-down" data-aos-delay="100">
                 <FiHome /> Home
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/about" data-aos="fade-down" data-aos-delay="400">
+              <Nav.Link as={NavLink} to="/about" data-aos="fade-down" data-aos-delay="200">
                 <FiUser /> About
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/projects" data-aos="fade-down" data-aos-delay="450">
+              <Nav.Link as={NavLink} to="/projects" data-aos="fade-down" data-aos-delay="300">
                 <FiFolder /> Projects
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/contact" data-aos="fade-down" data-aos-delay="500">
+              <Nav.Link as={NavLink} to="/contact" data-aos="fade-down" data-aos-delay="400">
                 <FiMail /> Contact
               </Nav.Link>
             </Nav>
@@ -93,15 +79,13 @@ const MyNavbar = () => {
         </Container>
       </Navbar>
 
-      {/* ===== Mobile Offcanvas Menu ===== */}
+      {/* Offcanvas for small screens */}
       <Offcanvas
         show={showModal}
         onHide={() => setShowModal(false)}
         placement="end"
         className="d-lg-none side-offcanvas"
-        data-aos="fade-left"
       >
-        {/* Offcanvas Header */}
         <Offcanvas.Header
           className="custom-close-header"
           style={{
@@ -114,39 +98,33 @@ const MyNavbar = () => {
               to="/"
               className="brand-logo"
               style={{ fontSize: '30px', color: '#ffdd57' }}
-              data-aos="zoom-in"
-              data-aos-delay="100"
             >
               Debasish
             </Navbar.Brand>
 
-            {/* Close icon */}
             <span
               className="custom-close-icon animated-close"
               onClick={() => setShowModal(false)}
               role="button"
               aria-label="Close Menu"
-              data-aos="zoom-out"
-              data-aos-delay="300"
             >
               <FiX size={30} />
             </span>
           </Offcanvas.Title>
         </Offcanvas.Header>
 
-        {/* Offcanvas Body */}
         <Offcanvas.Body className="offcanvas-gradient">
           <Nav className="flex-column custom-nav px-3" onClick={handleNavLinkClick}>
-            <Nav.Link as={NavLink} to="/" end data-aos="fade-right" data-aos-delay="350">
+            <Nav.Link as={NavLink} to="/" end data-aos="fade-right" data-aos-delay="100">
               <FiHome /> Home
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/about" data-aos="fade-right" data-aos-delay="400">
+            <Nav.Link as={NavLink} to="/about" data-aos="fade-right" data-aos-delay="200">
               <FiUser /> About
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/projects" data-aos="fade-right" data-aos-delay="450">
+            <Nav.Link as={NavLink} to="/projects" data-aos="fade-right" data-aos-delay="300">
               <FiFolder /> Projects
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/contact" data-aos="fade-right" data-aos-delay="500">
+            <Nav.Link as={NavLink} to="/contact" data-aos="fade-right" data-aos-delay="400">
               <FiMail /> Contact
             </Nav.Link>
           </Nav>
