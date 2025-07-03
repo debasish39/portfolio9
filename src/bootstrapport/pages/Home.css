@@ -97,7 +97,9 @@ body {
   text-decoration: none;
   color: black;
 }
-
+.btn-link:hover{
+  color: #000000;
+}
 .btn-link.white {
   color: white;
 }
