@@ -4,7 +4,7 @@
 
 /* ===== Navbar Container ===== */
 .custom-navbar {
-background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
+  background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
   border-bottom: 2px solid #ffdd57;
   box-shadow: 0 4px 15px rgba(255, 221, 87, 0.3);
   z-index: 1030;
@@ -37,14 +37,13 @@ background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
 }
 @media (max-width: 576px) {
   .brand-logo {
-    font-size:33px;
+    font-size: 33px;
   }
 }
 
 /* ===== Toggle Icon ===== */
 .custom-toggle-icon {
-  /* border: 2px solid #ffdd57; */
- border-radius: 39%;
+  border-radius: 39%;
   padding: 9px;
   color: #f9f506;
   display: inline-flex;
@@ -63,9 +62,7 @@ background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
 .navbar-toggler:focus {
   box-shadow: none !important;
 }
-/* Custom close icon styling */
 .custom-close-icon {
-  /* border: 2px solid #ffdd57; */
   border-radius: 39%;
   padding: 7px;
   color: #ffdd57;
@@ -75,19 +72,14 @@ background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
-/* Add animated effect */
 .animated-close {
   animation: fadeInRotate 0.4s ease;
 }
-
 .custom-close-icon:hover {
   background-color: rgba(255, 221, 87, 0.1);
   box-shadow: 0 0 18px #ffdd57;
   transform: rotate(90deg) scale(1.1);
 }
-
-/* Keyframes for entrance animation */
 @keyframes fadeInRotate {
   0% {
     opacity: 0;
@@ -105,9 +97,7 @@ background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
   color: #f8f8f8 !important;
   font-weight: 600;
   font-size: 1.05rem;
-  /* padding: 10px 16px; */
   margin: 0 12px;
-  /* border-radius: 12px; */
   display: flex;
   align-items: center;
   gap: 9px;
@@ -130,24 +120,29 @@ background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
   transition: width 0.4s ease;
 }
 .custom-nav .nav-link:hover::after {
-  width: 60%;
+  width: 100%;
 }
 
 /* Active state underline */
 .custom-nav .nav-link.active::after {
-  width: 60%;
+  width: 100%;
 }
+
+/* === Flat Hover/Active (No Background or Border) === */
+.custom-nav .nav-link:hover {
+  color: #ffdd57 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  transform: none;
+}
+
 .custom-nav .nav-link.active {
   color: #ffdd57 !important;
   font-weight: 700;
-}
-
-/* Hover styling */
-.custom-nav .nav-link:hover {
-  color: #ffdd57 !important;
-  background-color: rgba(255, 221, 87, 0.1);
-  box-shadow: 0 0 10px rgba(255, 221, 87, 0.4);
-  transform: translateY(-1px);
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
 /* ===== Nav Alignment ===== */
@@ -169,12 +164,10 @@ background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
   background-color: #000;
   color: #fff;
 }
-
 .side-offcanvas .offcanvas-header {
   border-bottom: 1px solid #ffdd57;
   background: linear-gradient(to bottom right, #000000, #1a1a1a, #ffdd57);
 }
-
 .side-offcanvas .offcanvas-title {
   font-size: 1.5rem;
   color: #ffdd57;
@@ -182,15 +175,14 @@ background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
 .offcanvas-gradient {
   background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
 }
-/* ========== Offcanvas Close Button Custom Style ========== */
 
+/* ===== Offcanvas Close Button ===== */
 .side-offcanvas .btn-close {
-  /* filter: invert(84%) sepia(98%) saturate(658%) hue-rotate(1deg) brightness(105%) contrast(104%); */
   background-color: transparent;
   border: 2px solid #ffdd57;
   color: #ffdd57;
   border-radius: 12%;
-  padding:9px;
+  padding: 9px;
   font-size: 1.5rem;
   transition: all 0.3s ease;
 }
@@ -199,7 +191,7 @@ background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
   box-shadow: 0 0 12px #ffdd57;
 }
 
-/* ========== Offcanvas Nav Link Enhancements ========== */
+/* ===== Offcanvas Nav Links ===== */
 .flat-nav .nav-link {
   padding: 12px 14px;
   font-size: 1.05rem;
@@ -213,10 +205,8 @@ background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
   align-items: center;
   gap: 12px;
   position: relative;
-  margin-bottom: 12px; /* NEW: spacing between links */
+  margin-bottom: 12px;
 }
-
-/* Hover and active underline */
 .flat-nav .nav-link::after {
   content: "";
   position: absolute;
@@ -233,21 +223,13 @@ background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
 .flat-nav .nav-link.active::after {
   width: 60%;
 }
-
-/* Hover and active colors */
 .flat-nav .nav-link:hover,
 .flat-nav .nav-link.active {
   color: #ffdd57 !important;
-  background-color: rgba(255, 221, 87, 0.08);
+  background-color: transparent;
 }
 
-/* ===== General Utilities ===== */
-.text-gold {
-  color: #ffdd57 !important;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-shadow: 0 0 8px rgba(255, 221, 87, 0.6);
-}
+/* ===== Responsive Nav Link Style ===== */
 @media (max-width: 991px) {
   .custom-nav {
     display: flex;
@@ -262,7 +244,7 @@ background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
     font-weight: 600;
     font-size: 1.1rem;
     padding: 12px 18px;
-    margin: 30px 0; /* Space between links */
+    margin: 30px 0;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -270,12 +252,11 @@ background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
     gap: 10px;
     text-align: center;
     width: 100%;
-    max-width: 250px; /* Optional: constrain width for better layout */
+    max-width: 250px;
     transition: all 0.3s ease;
     text-decoration: none;
   }
 
-  /* Optional: underline effect stays the same */
   .custom-nav .nav-link::after {
     content: "";
     position: absolute;
@@ -291,8 +272,16 @@ background: linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e);
 
   .custom-nav .nav-link:hover::after,
   .custom-nav .nav-link.active::after {
-    width: 60%;
+    width: 100%;
   }
+}
+
+/* ===== General Utilities ===== */
+.text-gold {
+  color: #ffdd57 !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 8px rgba(255, 221, 87, 0.6);
 }
 
 html {
