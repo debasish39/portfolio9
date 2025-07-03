@@ -40,10 +40,10 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: linear-gradient(145deg, #ffeb3b, #fff176);
+  background: linear-gradient(to left bottom, #514b13, #d4ca70);
   color: #000;
   border: none;
-  border-radius: 50%;
+  border-radius: 90%;
   width: 50px;
   height: 50px;
   font-size: 1.2rem;
@@ -59,8 +59,8 @@
 
 .scroll-top-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 30px #ffeb3b, 0 0 10px #fff176;
-  background: linear-gradient(145deg, #fff176, #ffeb3b);
+  box-shadow: 0 0 30px #7d7631, 0 0 10px #fff176;
+  background: linear-gradient(145deg, #433e12, #f7e11a);
   color: #000;
 }
 
