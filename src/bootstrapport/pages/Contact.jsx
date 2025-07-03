@@ -112,7 +112,7 @@ const Contact = () => {
 
   return (
     <div className="contact-wrapper">
-      <Container className="mt-5 mb-5 contact-container">
+      <Container className=" mb-3 contact-container">
         {/* Scroll Progress Bar */}
         <div
           style={{
