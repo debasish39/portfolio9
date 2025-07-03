@@ -47,7 +47,7 @@ const MyNavbar = () => {
           <Navbar.Brand 
             as={Link} 
             to="/" 
-            className="brand-logo"
+            className="brand-logo" data-aos="flip-right"  
           >
             Debasish
           </Navbar.Brand>
