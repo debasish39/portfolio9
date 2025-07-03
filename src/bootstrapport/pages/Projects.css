@@ -35,34 +35,33 @@
 }
 
 /* Scroll to Top Button */
+/* Scroll to Top Button */
 .scroll-top-btn {
   position: fixed;
-  bottom: 90px;
-  right: 39px;
-  background-color: #605a39;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(145deg, #ffeb3b, #fff176);
+  color: #000;
   border: none;
-  border-radius: 8px;
-  padding: 10px 14px;
-  box-shadow: 0 0 30px #ffeb3b;
-  font-size: 23px;
-  font-weight: 900;
-  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 0 15px #ffeb3b88, 0 0 8px #fff176;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   z-index: 9999;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .scroll-top-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 45px #ffeb3b;
-}
-
-/* Swiper Styles */
-.swiper {
-  padding-top: 20px;
-  padding-bottom: 40px;
-}
-.swiper-slide {
-  width: 300px;
+  box-shadow: 0 0 30px #ffeb3b, 0 0 10px #fff176;
+  background: linear-gradient(145deg, #fff176, #ffeb3b);
+  color: #000;
 }
 
 /* Spinner Loader */
