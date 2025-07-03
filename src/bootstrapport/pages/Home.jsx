@@ -45,7 +45,7 @@ const Home = () => {
   }
 
   return (
-    <div className="alt-home-hero">
+    <div className="alt-home-hero"style={{marginBottom:'69px'}}>
       {/* Scroll progress bar */}
       <div
         className="scroll-progress"
