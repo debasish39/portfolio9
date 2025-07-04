@@ -24,7 +24,7 @@ const MyNavbar = () => {
   };
 
   useEffect(() => {
-    AOS.init({ duration: 800, once:false});
+    AOS.init({ duration: 800, once: false });
 
     const handleScroll = () => {
       const currentScroll = window.scrollY;
@@ -47,7 +47,7 @@ const MyNavbar = () => {
           <Navbar.Brand 
             as={Link} 
             to="/" 
-            className="brand-logo" data-aos="flip-right"  
+            className="brand-logo" data-aos="flip-right" 
           >
             Debasish
           </Navbar.Brand>
@@ -83,13 +83,13 @@ const MyNavbar = () => {
       <Offcanvas
         show={showModal}
         onHide={() => setShowModal(false)}
-        placement="end"
+        placement="start"
         className="d-lg-none side-offcanvas"
       >
         <Offcanvas.Header
           className="custom-close-header"
           style={{
-            backgroundImage: 'linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e)',
+            backgroundImage: 'linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e)',height: '75px'
           }}
         >
           <Offcanvas.Title className="text-gold d-flex align-items-center justify-content-between w-100">
@@ -97,7 +97,7 @@ const MyNavbar = () => {
               as={NavLink}
               to="/"
               className="brand-logo"
-              style={{ fontSize: '30px', color: '#ffdd57' }}
+              style={{ fontSize: '24px', color: '#ffdd57' }}
             >
               Debasish
             </Navbar.Brand>
