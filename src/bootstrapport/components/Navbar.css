@@ -298,3 +298,46 @@ body {
   color: #fff;
   font-family: 'Poppins', sans-serif;
 }
+
+
+@media (max-width:461px) {
+  .offcanvas.offcanvas-start {
+    top: 0;
+    left: 0;
+     width: 70% !important;
+    max-width: 320px;
+    /* border-left: 2px solid #ffdd57; */
+    border-right: 3px solid rgb(106, 106, 9);
+    transform: translateX(-100%);
+}
+ .custom-nav .nav-link {
+    font-size: 1rem;
+    padding: 10px 14px;
+    margin: 18px 0;
+    max-width: 220px;
+  }
+
+  .brand-logo {
+    font-size: 1.7rem;
+    margin-left: 10px;
+  }
+.navbar-toggler {
+    /* padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x); */
+    font-size: var(--bs-navbar-toggler-font-size);
+    line-height: 1;
+    color: var(--bs-navbar-color);
+    background-color: transparent;
+    /* border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color); */
+    border-radius: var(--bs-navbar-toggler-border-radius);
+    transition: var(--bs-navbar-toggler-transition);
+}
+  .custom-close-icon {
+    padding: 3px;
+    font-size: 1rem;
+  }
+
+  .offcanvas-title {
+    font-size: 1.25rem;
+  }
+}
+
