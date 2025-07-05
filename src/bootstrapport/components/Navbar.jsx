@@ -83,7 +83,7 @@ const MyNavbar = () => {
       <Offcanvas
         show={showModal}
         onHide={() => setShowModal(false)}
-        placement="start"
+        placement="end"
         className="d-lg-none side-offcanvas"
       >
         <Offcanvas.Header
