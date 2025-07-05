@@ -2,33 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
 import { FiMenu, FiX, FiHome, FiUser, FiFolder, FiMail } from 'react-icons/fi';
-import 'bootstrap/dist/css/bootstrap.css';
-import './Navbar.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import './Navbar.css';
 
 const MyNavbar = () => {
   const [expanded, setExpanded] = useState(false);
+  const [showOffcanvas, setShowOffcanvas] = useState(false);
   const [visible, setVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
-  const [showModal, setShowModal] = useState(false);
-
-  const handleToggle = () => {
-    setShowModal((prev) => !prev);
-    setExpanded((prev) => !prev);
-  };
-
-  const handleNavLinkClick = () => {
-    setExpanded(false);
-    setShowModal(false);
-  };
 
   useEffect(() => {
     AOS.init({ duration: 800, once: false });
 
     const handleScroll = () => {
       const currentScroll = window.scrollY;
-      setVisible(currentScroll <= prevScrollPos);
+      setVisible(currentScroll <= prevScrollPos || currentScroll < 10);
       setPrevScrollPos(currentScroll);
     };
 
@@ -36,32 +26,38 @@ const MyNavbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos]);
 
+  const toggleOffcanvas = () => {
+    setShowOffcanvas(!showOffcanvas);
+    setExpanded(!expanded);
+  };
+
+  const closeMenu = () => {
+    setShowOffcanvas(false);
+    setExpanded(false);
+  };
+
   return (
     <>
       <Navbar
         expanded={expanded}
         expand="lg"
-        className={`custom-navbar shadow-lg fixed-top ${visible ? 'navbar-show' : 'navbar-hide'}`}
+        fixed="top"
+        className={`custom-navbar ${visible ? 'navbar-show' : 'navbar-hide'}`}
       >
         <Container fluid>
-          <Navbar.Brand 
-            as={Link} 
-            to="/" 
-            className="brand-logo" data-aos="flip-right" 
-          >
+          <Navbar.Brand as={Link} to="/" className="brand-logo" data-aos="flip-right">
             Debasish
           </Navbar.Brand>
 
-          {/* Toggle icon */}
-          <Navbar.Toggle onClick={handleToggle} aria-controls="navbar-nav">
+          <Navbar.Toggle onClick={toggleOffcanvas} aria-label="Toggle navigation">
             <span className="custom-toggle-icon">
-              {showModal ? '' : <FiMenu size={30} />}
+              {showOffcanvas ? <FiX size={28} /> : <FiMenu size={28} />}
             </span>
           </Navbar.Toggle>
 
-          {/* Large screen nav links only */}
-          <Navbar.Collapse id="navbar-nav" className="d-none d-lg-flex">
-            <Nav className="custom-nav ms-auto" onClick={handleNavLinkClick}>
+          {/* Desktop Navigation */}
+          <Navbar.Collapse id="navbar-nav" className="d-none d-lg-flex justify-content-end">
+            <Nav className="custom-nav" onClick={closeMenu}>
               <Nav.Link as={NavLink} to="/" end data-aos="fade-down" data-aos-delay="100">
                 <FiHome /> Home
               </Nav.Link>
@@ -79,42 +75,31 @@ const MyNavbar = () => {
         </Container>
       </Navbar>
 
-      {/* Offcanvas for small screens */}
+      {/* Mobile Offcanvas Menu */}
       <Offcanvas
-        show={showModal}
-        onHide={() => setShowModal(false)}
+        show={showOffcanvas}
+        onHide={closeMenu}
         placement="end"
         className="d-lg-none side-offcanvas"
       >
-        <Offcanvas.Header
-          className="custom-close-header"
-          style={{
-            backgroundImage: 'linear-gradient(to left bottom, #000000, #1a1a1a, #4a3e0e)',height: '75px'
-          }}
-        >
-          <Offcanvas.Title className="text-gold d-flex align-items-center justify-content-between w-100">
-            <Navbar.Brand
-              as={NavLink}
-              to="/"
-              className="brand-logo"
-              style={{ fontSize: '24px', color: '#ffdd57' }}
-            >
+        <Offcanvas.Header className="custom-close-header">
+          <Offcanvas.Title className="offcanvas-title d-flex justify-content-between w-100 align-items-center">
+            <Link to="/" className="brand-logo" onClick={closeMenu}>
               Debasish
-            </Navbar.Brand>
-
+            </Link>
             <span
               className="custom-close-icon animated-close"
-              onClick={() => setShowModal(false)}
               role="button"
-              aria-label="Close Menu"
+              aria-label="Close menu"
+              onClick={closeMenu}
             >
-              <FiX size={30} />
+              <FiX size={26} />
             </span>
           </Offcanvas.Title>
         </Offcanvas.Header>
 
         <Offcanvas.Body className="offcanvas-gradient">
-          <Nav className="flex-column custom-nav px-3" onClick={handleNavLinkClick}>
+          <Nav className="flat-nav" onClick={closeMenu}>
             <Nav.Link as={NavLink} to="/" end data-aos="fade-right" data-aos-delay="100">
               <FiHome /> Home
             </Nav.Link>
