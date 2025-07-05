@@ -650,7 +650,7 @@ body {
     max-width: 320px;
     /* border-left: 2px solid #ffdd57; */
     border-left: 3px solid rgb(106, 106, 9);
-    transform: translateX(-100%);
+    transform: translateX(100%);
 }
  .custom-nav .nav-link {
     font-size: 1rem;
