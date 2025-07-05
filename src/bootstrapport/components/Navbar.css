@@ -301,7 +301,7 @@ body {
 
 
 @media (max-width:461px) {
-  .offcanvas.offcanvas-start {
+  .offcanvas.offcanvas-end {
     top: 0;
     left: 0;
      width: 70% !important;
