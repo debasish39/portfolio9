@@ -11,33 +11,37 @@ import NoPage from './pages/NoPage.jsx';
 import './scroll.css';
 import ClickSpark from './ClickSpark.jsx';
 
+import ParticleBackground from './components/ParticleBackground.jsx'; // 👈 import it
+
 function King() {
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100" style={{ backgroundColor: 'black', position: 'relative' }}>
-        
-        {/* ClickSpark should cover the full screen and capture clicks */}
+
+        {/* Background Particle Layer (Z-Index: 0) */}
+        <ParticleBackground />
+
+        {/* Click Spark Layer (Z-Index: 1+) */}
         <ClickSpark 
-          sparkColor="yellow" 
+          sparkColor="#CD5FF8" 
           sparkSize={30} 
           sparkRadius={3} 
           sparkCount={15} 
           duration={900} 
         >
-
-        <MyNavbar />
-        <div style={{ paddingTop: '90px' }}></div> {/* Add padding to push content down */}
-        <div className="flex-grow-1 select">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NoPage />} /> {/* Handle 404 */}
-          </Routes>
-        </div>
-        
-        <Footer />
+          {/* Foreground Content */}
+          <MyNavbar />
+          <div style={{ paddingTop: '90px' }}></div>
+          <div className="flex-grow-1 select">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NoPage />} />
+            </Routes>
+          </div>
+          <Footer />
         </ClickSpark>
       </div>
     </Router>

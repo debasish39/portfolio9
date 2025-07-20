@@ -45,7 +45,7 @@ const Home = () => {
   }
 
   return (
-    <div className="alt-home-hero">
+    <div className="alt-home-hero"style={{marginBottom:'69px'}}>
       {/* Scroll progress bar */}
       <div
         className="scroll-progress"
@@ -67,7 +67,7 @@ const Home = () => {
           Hey, I'm <span>Debasish</span>
         </h1>
 
-        <p className="hero-subtext">
+  <p className="hero-subtext">
         <Typewriter
   words={[
      '🐍 Django Developer',
@@ -95,7 +95,7 @@ const Home = () => {
   delaySpeed={1000}
 />
 
-        </p>
+        </p>      
 
         <div className="hero-buttons">
           <button className="hero-btn">
