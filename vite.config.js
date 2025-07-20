@@ -1,13 +1,34 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  server: {
-   
-    allowedHosts: [
-      '2c8d-2409-40e2-1b-5f8d-3847-42b8-63ae-e7fa.ngrok-free.app'  // paste your current Ngrok domain here
-    ]
-  }
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      manifest: {
+        name: 'Debasish Portfolio',
+        short_name: 'Portfolio',
+        start_url: '/',
+        display: 'standalone',
+        background_color: '#000000', // Black background for dark theme
+        theme_color: '#FFD700', // Golden-yellow (feel free to adjust)
+
+        icons: [
+          {
+            src: '/pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
+    }),
+  ],
 })
