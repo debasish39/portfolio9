@@ -6,15 +6,13 @@ import Skills from './components/Skills';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ParticleBackground from './components/ParticleBackground'; // ✅ import it
-import ScrollToTop from './ScrollToTop';
 import './App.css';
-
+import ScrollToTop from'./ScrollToTop';
 function App() {
   return (
-    <div className="App" style={{ position: "relative", overflowX: "hidden" }}>
-      <ParticleBackground /> {/* ✅ Add here, before content */}
-      <ScrollToTop />
+  
+    <div className="App">  
+    <ScrollToTop/>
       <Header />
       <About />
       <Projects />

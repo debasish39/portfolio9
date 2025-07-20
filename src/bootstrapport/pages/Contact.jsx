@@ -74,7 +74,7 @@ const Contact = () => {
 
     const data = {
       access_key: import.meta.env.VITE_WEB3FORMS_KEY,
-      subject: 'Contact form(PORTFOLIO)',
+      subject: 'Contact form of Portfolio',
       from_name: 'Portfolio Contact Form',
       name: formData.name,
       email: formData.email,
@@ -112,7 +112,7 @@ const Contact = () => {
 
   return (
     <div className="contact-wrapper">
-      <Container className=" mb-5 contact-container">
+      <Container className=" mb-3 contact-container">
         {/* Scroll Progress Bar */}
         <div
           style={{
@@ -207,40 +207,63 @@ const Contact = () => {
         </Form>
 
         {/* Social Media Icons with inline zoom-in animation */}
-        <div
-          className="social-media-icons mt-5 mb-4 aos-init aos-animate"
-          style={{ animation: 'zoom-in 1s ease forwards' }}
-        >
-          <OverlayTrigger placement="top" overlay={<Tooltip>LinkedIn</Tooltip>}>
-            <a href="https://www.linkedin.com/in/debasish-panda-857715314/" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin size={30} className="icon" />
-            </a>
-          </OverlayTrigger>
+      <div className="social-media-icons mt-5 mb-4">
+  <OverlayTrigger placement="top" overlay={<Tooltip>LinkedIn</Tooltip>}>
+    <a
+      href="https://www.linkedin.com/in/debasish-panda-857715314/"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-aos="fade-right"
+      data-aos-delay="100"
+    >
+      <FaLinkedin size={30} className="icon" />
+    </a>
+  </OverlayTrigger>
 
-          <OverlayTrigger placement="top" overlay={<Tooltip>Instagram</Tooltip>}>
-            <a href="https://www.instagram.com/deba_963" target="_blank" rel="noopener noreferrer">
-              <FaInstagram size={30} className="icon" />
-            </a>
-          </OverlayTrigger>
+  <OverlayTrigger placement="top" overlay={<Tooltip>Instagram</Tooltip>}>
+    <a
+      href="https://www.instagram.com/deba_963"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
+      <FaInstagram size={30} className="icon" />
+    </a>
+  </OverlayTrigger>
 
-          <OverlayTrigger placement="top" overlay={<Tooltip>GitHub</Tooltip>}>
-            <a href="https://github.com/debasish39" target="_blank" rel="noopener noreferrer">
-              <FaGithub size={30} className="icon" />
-            </a>
-          </OverlayTrigger>
+  <OverlayTrigger placement="top" overlay={<Tooltip>GitHub</Tooltip>}>
+    <a
+      href="https://github.com/debasish39"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-aos="fade-down"
+      data-aos-delay="300"
+    >
+      <FaGithub size={30} className="icon" />
+    </a>
+  </OverlayTrigger>
 
-          <OverlayTrigger placement="top" overlay={<Tooltip>Email</Tooltip>}>
-            <a href="mailto:djproject963@gmail.com" target="_blank" rel="noopener noreferrer">
-              <FaEnvelope size={30} className="icon" />
-            </a>
-          </OverlayTrigger>
-        </div>
+  <OverlayTrigger placement="top" overlay={<Tooltip>Email</Tooltip>}>
+    <a
+      href="mailto:djproject963@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-aos="fade-left"
+      data-aos-delay="400"
+    >
+      <FaEnvelope size={30} className="icon" />
+    </a>
+  </OverlayTrigger>
+</div>
+
 
         {/* Google Map with inline zoom-in animation */}
-        <div
-          className="mt-4 mb-5 pb-3 aos-init aos-animate"
-          style={{ animation: 'zoom-in 1s ease forwards' }}
-        >
+       <div
+  className="mt-4 mb-5 pb-3"
+  data-aos="flip-left"
+  data-aos-delay="500"
+>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15035.965900818937!2d84.92123115008701!3d19.58486590002057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a22aa1346b86037%3A0xe6bbe14384e1ea42!2sChingudi%20Ghai%2C%20Odisha%20761018!5e0!3m2!1sen!2sin!4v1751424835153!5m2!1sen!2sin"
             width="100%"
