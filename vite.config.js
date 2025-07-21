@@ -14,7 +14,7 @@ export default defineConfig({
         start_url: '/',
         display: 'standalone',
         background_color: '#000000', // Black background for dark theme
-        theme_color: 'yellow', // Golden-yellow (feel free to adjust)
+        theme_color: 'transparent', // Golden-yellow (feel free to adjust)
 
         icons: [
           {
