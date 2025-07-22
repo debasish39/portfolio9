@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
-import { FiMenu, FiX, FiHome, FiUser, FiFolder, FiMail } from 'react-icons/fi';
+import {  FiX, FiHome, FiUser, FiFolder, FiMail, FiAlignRight } from 'react-icons/fi';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Navbar.css';
 import AOS from 'aos';
@@ -55,7 +55,7 @@ const MyNavbar = () => {
           {/* Toggle icon */}
           <Navbar.Toggle onClick={handleToggle} aria-controls="navbar-nav">
             <span className="custom-toggle-icon">
-              {showModal ? '' : <FiMenu size={30} />}
+              {showModal ? '' : <FiAlignRight size={30} />}
             </span>
           </Navbar.Toggle>
 
