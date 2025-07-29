@@ -12,6 +12,7 @@ const Footer = () => {
   return (
     <footer className="footer" data-aos="fade-up">
       <Container className="text-center py-3">
+        
       <small>Built with ❤️ by <strong>Debasish</strong> | © {new Date().getFullYear()}</small>
 
       </Container>

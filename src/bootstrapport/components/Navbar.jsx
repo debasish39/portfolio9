@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
-import {  FiX, FiHome, FiUser, FiFolder, FiMail, FiAlignRight } from 'react-icons/fi';
+import {  FiX, FiHome, FiUser, FiFolder, FiMail, FiAlignRight, FiMenu } from 'react-icons/fi';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Navbar.css';
 import AOS from 'aos';
@@ -55,7 +55,7 @@ const MyNavbar = () => {
           {/* Toggle icon */}
           <Navbar.Toggle onClick={handleToggle} aria-controls="navbar-nav">
             <span className="custom-toggle-icon">
-              {showModal ? '' : <FiAlignRight size={30} />}
+              {showModal ? '' : <FiMenu size={30} />}
             </span>
           </Navbar.Toggle>
 
@@ -83,7 +83,7 @@ const MyNavbar = () => {
       <Offcanvas
         show={showModal}
         onHide={() => setShowModal(false)}
-        placement="end"
+        placement="start"
         className="d-lg-none side-offcanvas"
       >
         <Offcanvas.Header
@@ -95,7 +95,7 @@ const MyNavbar = () => {
           <Offcanvas.Title className="text-gold d-flex align-items-center justify-content-between w-100">
             <Navbar.Brand
               as={NavLink}
-              to="/" data-aos="fade-left" 
+              to="/" data-aos="fade-right" 
               data-aos-delay='150'
               className="brand-logo"
               style={{ fontSize: '24px', color: '#ffdd57' }}
@@ -116,16 +116,16 @@ const MyNavbar = () => {
 
         <Offcanvas.Body className="offcanvas-gradient">
           <Nav className="flex-column custom-nav px-3" onClick={handleNavLinkClick}>
-            <Nav.Link as={NavLink} to="/" end data-aos="fade-left" data-aos-delay="100">
+            <Nav.Link as={NavLink} to="/" end data-aos="fade-right" data-aos-delay="100">
               <FiHome /> Home
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/about" data-aos="fade-left" data-aos-delay="200">
+            <Nav.Link as={NavLink} to="/about" data-aos="fade-right" data-aos-delay="200">
               <FiUser /> About
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/projects" data-aos="fade-left" data-aos-delay="300">
+            <Nav.Link as={NavLink} to="/projects" data-aos="fade-right" data-aos-delay="300">
               <FiFolder /> Projects
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/contact" data-aos="fade-left" data-aos-delay="400">
+            <Nav.Link as={NavLink} to="/contact" data-aos="fade-right" data-aos-delay="400">
               <FiMail /> Contact
             </Nav.Link>
           </Nav>

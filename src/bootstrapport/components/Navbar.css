@@ -307,7 +307,7 @@ body {
      width: 70% !important;
     max-width: 320px;
     /* border-left: 2px solid #ffdd57; */
-    border-left: 3px solid rgb(106, 106, 9);
+    border-right: 3px solid rgb(106, 106, 9);
     transform: translateX(-100%);
 }
  .custom-nav .nav-link {
@@ -643,14 +643,14 @@ body {
 
 
 @media (max-width:461px) {
-  .offcanvas.offcanvas-end {
+  .offcanvas.offcanvas-start {
     top: 0;
-    right: 0;
-     width: 70% !important;
-    max-width: 320px;
+    left: 0;
+     width: 80% !important;
+    max-width: 350px;
     /* border-left: 2px solid #ffdd57; */
-    border-left: 3px solid rgb(106, 106, 9);
-    transform: translateX(100%);
+    border-right: 3px solid rgb(106, 106, 9);
+    /* transform: translateX(100%); */
 }
  .custom-nav .nav-link {
     font-size: 1rem;
@@ -681,4 +681,7 @@ body {
   .offcanvas-title {
     font-size: 1.25rem;
   }
+}
+.no-scroll {
+  overflow: hidden;
 }
