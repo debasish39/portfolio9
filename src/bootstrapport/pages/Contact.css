@@ -12,26 +12,6 @@ body {
   color: white;
   font-family: 'Poppins', sans-serif;
 }
-/* .contact-wrapper h2 {
-  color: #ffdd57;
-  text-shadow: 0 0 8px #ffdd57;
-  text-align: center;
-  margin-bottom: 30px;
-} */
-.Toastify__toast--success {
-  background: #000 !important;     /* Black background */
-  color:#07BC0C !important;       /* Bright yellow text */
-  font-weight: bold;
-  border: 2px solid #1a0401 !important;
-  box-shadow: 0 0 15px rgba(56, 22, 13, 0.4);
-}
-.Toastify__toast--error {
-  background: #000 !important;     /* Black background */
-  color: #b51004 !important;       /* Bright yellow text */
-  font-weight: bold;
-  border: 2px solid #1a1808 !important;
-  box-shadow: 0 0 15px rgba(159, 42, 7, 0.4);
-}
 
 .form-label {
   color: #eee;
@@ -170,23 +150,6 @@ box-shadow:0 0 30px rgba(255, 221, 87, 0.8);
   transition: width 0.3s ease;
 }
 
-.scroll-top-btn {
-  position: fixed;
-  bottom: 90px;
-  right: 39px;
-  background-color: #605a39;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 14px;
-  box-shadow: 0 2px 99px rgb(255, 255, 0);
-  font-size: 23px;
-  font-weight: 900;
-  z-index: 9999;
-}
-
-.scroll-top-btn:hover {
-  transform: scale(1.1);
-}
 
 .contact-container .input-icon {
   background-color: #ffc107;

@@ -21,6 +21,7 @@ import {
   FaAddressBook,
   FaArrowUp,
 } from 'react-icons/fa';
+import { IoIosArrowUp } from "react-icons/io";
 
 import './Contact.css';
 import AOS from 'aos';

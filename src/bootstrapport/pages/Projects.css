@@ -38,7 +38,7 @@
 /* Scroll to Top Button */
 .scroll-top-btn {
   position: fixed;
-  bottom: 30px;
+  bottom: 6px;
   right: 30px;
   background: linear-gradient(to left bottom, #514b13, #d4ca70);
   color: #000;
@@ -93,8 +93,8 @@
   }
 
   .scroll-top-btn {
-    bottom: 20px;
-    right: 20px;
+    bottom: 30px;
+    right: 12px;
     padding: 8px 12px;
     font-size: 18px;
   }

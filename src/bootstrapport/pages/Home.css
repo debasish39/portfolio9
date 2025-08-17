@@ -153,39 +153,10 @@ body {
     max-width: 500px;
   }
 
-  .scroll-top-btn {
-    bottom: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
+
 }
 
-.scroll-top-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #ffeb3b;
-  color: #000;
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  width: 45px;
-  height: 45px;
-  font-size: 1.2rem;
-  box-shadow: 0 0 25px #ffeb3b88;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.scroll-top-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 35px #ffeb3b;
-}
 
 .spinner-container {
   height: 100vh;
@@ -237,14 +208,14 @@ body {
     width: 100%;
     max-width: 500px;
   }
-
+/* 
   .scroll-top-btn {
-    bottom: 20px;
-    right: 20px;
+    bottom: 2px;
+    right: 2px;
     width: 40px;
     height: 40px;
     font-size: 1rem;
-  }
+  } */
   .hero-buttons {
   display: flex;
   gap: 1rem;
