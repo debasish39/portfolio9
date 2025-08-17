@@ -26,8 +26,8 @@ import './Contact.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const Contact = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -91,11 +91,11 @@ const Contact = () => {
         setSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
       } else {
-        toast.error(' Submission failed. ');
+        toast.error(' Submission failed. ',{style:{'color':'green',"backgroundColor":'black'}});
       }
     } catch (err) {
       console.error('Web3Forms Error:', err);
-      toast.error(' Submission failed.');
+      toast.error(' Submission failed.',{style:{'color':'red',"backgroundColor":'black'}});
     } finally {
       setLoading(false);
     }
@@ -287,13 +287,8 @@ const Contact = () => {
           </Button>
         )}
 
-        {/* Toast */}
-        <ToastContainer
-          position="top-right"
-          autoClose={3000}
-          toastClassName="custom-toast"
-          bodyClassName="custom-toast-body"
-        />
+    <Toaster position="top-center" reverseOrder={false} />
+
       </Container>
     </div>
   );
