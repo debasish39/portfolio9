@@ -88,7 +88,7 @@ const Contact = () => {
       });
 
       if (response.data.success) {
-        toast.success(' Submission Successful.');
+        toast.success(' Submission Successful.',{style:{'color':'green',"backgroundColor":'black'}});
         setSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
       } else {
