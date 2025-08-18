@@ -288,7 +288,7 @@ const Contact = () => {
           </Button>
         )}
 
-    <Toaster position="top-center" reverseOrder={false} />
+    <Toaster position="top-right" reverseOrder={false} />
 
       </Container>
     </div>
