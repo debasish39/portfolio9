@@ -5,9 +5,10 @@ import { FaArrowUp } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import Tilt from "react-parallax-tilt";
 import sonu from "./sonu-removebg.png";
 import "./Home.css";
+import {  FaFolderOpen, FaFileAlt } from "react-icons/fa";
 
 const Home = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -53,13 +54,20 @@ const Home = () => {
       />
 
       {/* Left: Profile */}
-      <div className="hero-left" data-aos="fade-right">
-        <img
-          src={sonu}
-          alt="Debasish"
-          className="hero-image"
-        />
-      </div>
+     <div className="hero-left" data-aos="fade-right">
+  <Tilt 
+    glareEnable={true} 
+    glareMaxOpacity={0.1} 
+    scale={1.01} 
+    transitionSpeed={250}
+  >
+    <img
+      src={sonu}
+      alt="Debasish"
+      className="hero-image"
+    />
+  </Tilt>
+</div>
 
       {/* Right: Text & Buttons */}
       <div className="hero-right" data-aos="fade-left">
@@ -97,24 +105,27 @@ const Home = () => {
 
         </p>
 
-        <div className="hero-buttons">
-          <button className="hero-btn">
-            <Link to="/projects" className="btn-link">
-              ✨ View Projects
-            </Link>
-          </button>
+       <div className="hero-buttons">
+  <button className="hero-btn">
+  <Link to="/projects" className="btn-link" style={{ display: "flex", alignItems: "center",justifyContent:'center' }}>
+    <FaFolderOpen style={{ marginRight: "8px",fontSize:'23px' }} />
+    <span>View Projects</span>
+  </Link>
+</button>
 
-          <button className="hero-btn outline">
-            <a
-              href="https://drive.google.com/file/d/11tKKl-ELpQh_RhsjqCiU0B-TBkaOoS65/view?usp=drive_link"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-link white"
-            >
-              📩 View Resume
-            </a>
-          </button>
-        </div>
+
+  <button className="hero-btn outline">
+    <a
+      href="https://drive.google.com/file/d/11tKKl-ELpQh_RhsjqCiU0B-TBkaOoS65/view?usp=drive_link"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="btn-link white" style={{ display: "flex", alignItems: "center",justifyContent:'center' }}
+    >
+      <FaFileAlt style={{ marginRight: "8px",fontSize:"23px" }} /> View Resume
+    </a>
+  </button>
+</div>
+
       </div>
 
       {/* Scroll To Top Button */}
