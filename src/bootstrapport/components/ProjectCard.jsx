@@ -38,7 +38,7 @@ const ProjectCard = ({
           <Card.Title>{title}</Card.Title>
           <Card.Text>{description}</Card.Text>
 
-<div className="d-flex flex-row justify-content-center align-items-center responsive-gap gap-2 mt-2" style={{flexWrap: "nowrap"}}>
+<div className="d-flex flex-row justify-content-around align-items-center responsive-gap gap-2 mt-2" style={{flexWrap: "nowrap"}}>
   {projectUrl && (
     <Button
       variant="outline-warning"
