@@ -4,7 +4,7 @@ import ProjectCard from '../components/ProjectCard.jsx';
 import './Projects.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { FaArrowUp } from 'react-icons/fa'; // ✅ Import icon
+import { FaArrowUp } from 'react-icons/fa'; // scroll top button
 import quote from './quote.png';  
 import qr from './qr.png';  
 import txtspeech from './txtspeech.png';  
@@ -20,58 +20,66 @@ const projectData = [
     title: 'Portfolio Website',
     description: 'A personal portfolio showcasing my skills and projects.',
     imageUrl: port,
-    projectUrl: 'https://another.debasish.xyz/'
+    projectUrl: 'https://another.debasish.xyz/',
+    githubUrl: 'https://github.com/debasish/portfolio'
   },
   {
     title: 'Quote Generator',
     description: 'An app that generates random quotes to inspire you.',
     imageUrl: quote,
-    projectUrl: 'https://quotes.debasish.xyz/'
+    projectUrl: 'https://quotes.debasish.xyz/',
+    githubUrl: 'https://github.com/debasish/quote-generator'
   },
   {
     title: 'QR Code Generator',
     description: 'Generate QR codes for any text or link easily.',
     imageUrl: qr,
-    projectUrl: 'https://qrcode.debasish.xyz/'
+    projectUrl: 'https://qrcode.debasish.xyz/',
+    githubUrl: 'https://github.com/debasish/qr-code-generator'
   },
   {
     title: 'Text to Speech Converter',
     description: 'Convert text into speech using this simple tool.',
     imageUrl: txtspeech,
-    projectUrl: 'https://texttospeech.debasish.xyz/'
+    projectUrl: 'https://texttospeech.debasish.xyz/',
+    githubUrl: 'https://github.com/debasish/text-to-speech'
   },
   {
     title: 'To-Do App',
     description: 'A simple to-do list app to manage your tasks efficiently.',
     imageUrl: TodoApp,
-    projectUrl: 'https://todo.debasish.xyz/'
+    projectUrl: 'https://todo.debasish.xyz/',
+    githubUrl: 'https://github.com/debasish/todo-app'
   },
   {
     title: 'Basic Calculator',
     description: 'A simple calculator for basic arithmetic operations.',
     imageUrl: Calculator,
-    projectUrl: 'https://calculator.dob.debasish.xyz/'
+    projectUrl: 'https://calculator.dob.debasish.xyz/',
+    githubUrl: 'https://github.com/debasish/basic-calculator'
   },
   {
     title: 'Advanced Calculator',
     description: 'A more advanced calculator with additional functions.',
     imageUrl: cal,
-    projectUrl: 'https://calculator.debasish.xyz/'
+    projectUrl: 'https://calculator.debasish.xyz/',
+    githubUrl: 'https://github.com/debasish/advanced-calculator'
   },
   {
     title: 'Temperature Converter',
     description: 'Convert temperatures between Celsius, Fahrenheit, and Kelvin.',
     imageUrl: tem,
-    projectUrl: 'https://temp.debasish.xyz/'
+    projectUrl: 'https://temp.debasish.xyz/',
+    githubUrl: 'https://github.com/debasish/temp-converter'
   },
   {
     title: 'Joke Generator',
     description: 'Get a random joke every time you click the button!',
     imageUrl: joke,
-    projectUrl: 'https://joke.debasish.xyz/'
+    projectUrl: 'https://joke.debasish.xyz/',
+    githubUrl: 'https://github.com/debasish/joke-generator'
   },
 ];
-
 
 const Projects = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -114,41 +122,41 @@ const Projects = () => {
 
   return (
     <div className="project-wrapper">
-    <Container className="mt-5 mb-5 pb-5">
-      {/* Scroll Progress Bar */}
-      <div
-        className="scroll-progress mb-3"
-        style={{ width: `${scrollPercentage}%` }}
-      />
+      <Container className="mt-5 mb-5 pb-5">
+        {/* Scroll Progress Bar */}
+        <div
+          className="scroll-progress mb-3"
+          style={{ width: `${scrollPercentage}%` }}
+        />
 
-      <h2 className="section-title mb-5 text-center">🚀 My Projects</h2>
+        <h2 className="section-title mb-5 text-center">🚀 My Projects</h2>
 
-      <Row className="gy-4 mb-3">
-        {projectData.map((project, index) => (
-          <Col
-            key={index}
-            xs={12}
-            sm={6}
-            md={4}
-            data-aos="fade-up"
-            data-aos-delay={index * 100}
+        <Row className="gy-4 mb-3">
+          {projectData.map((project, index) => (
+            <Col
+              key={index}
+              xs={12}
+              sm={6}
+              md={4}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <ProjectCard {...project} />
+            </Col>
+          ))}
+        </Row>
+
+        {/* Scroll-to-top button */}
+        {showScrollTop && (
+          <Button
+            onClick={scrollToTop}
+            className="scroll-top-btn btn-outline-warning"
+            data-aos="fade-down"
           >
-            <ProjectCard {...project} />
-          </Col>
-        ))}
-      </Row>
-
-      {/* ✅ Updated with Icon */}
-      {showScrollTop && (
-        <Button
-          onClick={scrollToTop}
-          className="scroll-top-btn btn-outline-warning"
-          data-aos="fade-down"
-        >
-          <FaArrowUp />
-        </Button>
-      )}
-    </Container>
+            <FaArrowUp />
+          </Button>
+        )}
+      </Container>
     </div>
   );
 };
