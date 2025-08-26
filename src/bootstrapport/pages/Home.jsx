@@ -59,6 +59,8 @@ const Home = () => {
     glareEnable={true} 
     glareMaxOpacity={0.1} 
     scale={1.01} 
+     tiltMaxAngleX={24}
+      tiltMaxAngleY={24}
     transitionSpeed={250}
   >
     <img
