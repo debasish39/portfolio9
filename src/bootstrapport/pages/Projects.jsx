@@ -8,7 +8,7 @@ import { FaArrowUp } from "react-icons/fa"; // scroll top button
 import quote from "./quote.png";
 import qr from "./qr.png";
 import txtspeech from "./txtspeech.png";
-import TodoApp from "./todoapp.png";
+import Todo from "./todo.png";
 import crud from "./crud.png";
 import blogzone from "./blogzone.png";
 import blog from './blog.png'
@@ -73,7 +73,7 @@ const projectData = [
   {
     title: "To-Do App",
     description: "A simple to-do list app to manage your tasks efficiently.",
-    imageUrl: TodoApp,
+    imageUrl: Todo,
     projectUrl: "https://todo.debasish.xyz/",
     githubUrl: "https://github.com/debasish39/Todo_Redux",
   },
