@@ -1,84 +1,115 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Button, Spinner } from 'react-bootstrap';
-import ProjectCard from '../components/ProjectCard.jsx';
-import './Projects.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { FaArrowUp } from 'react-icons/fa'; // scroll top button
-import quote from './quote.png';  
-import qr from './qr.png';  
-import txtspeech from './txtspeech.png';  
-import TodoApp from './TodoApp.png';  
-import Calculator from './Calculator.png';  
-import port from './port.png';  
-import cal from './cal.png';  
-import tem from './tem.png';  
-import joke from './joke.png';  
-
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col, Button, Spinner } from "react-bootstrap";
+import ProjectCard from "../components/ProjectCard.jsx";
+import "./Projects.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { FaArrowUp } from "react-icons/fa"; // scroll top button
+import quote from "./quote.png";
+import qr from "./qr.png";
+import txtspeech from "./txtspeech.png";
+import TodoApp from "./todoapp.png";
+import crud from "./crud.png";
+import blogzone from "./blogzone.png";
+import blog from './blog.png'
+import eshop from "./eshop.png";
+import cal from "./cal.png";
+import tem from "./tem.png";
+import landing from './landing.png'
+import jwt from './jwt.png'
 const projectData = [
   {
-    title: 'Portfolio Website',
-    description: 'A personal portfolio showcasing my skills and projects.',
-    imageUrl: port,
-    projectUrl: 'https://another.debasish.xyz/',
-    githubUrl: 'https://github.com/debasish/portfolio'
+    title: "BlogZone",
+    description:
+      "A modern blogging platform built with React and tailwindcss,PWA featuring reusable components and responsive design.",
+    imageUrl: blogzone,
+    projectUrl: "https://blogzone.debasish.xyz/",
+    githubUrl: "https://github.com/debasish39/BlogZone",
   },
   {
-    title: 'Quote Generator',
-    description: 'An app that generates random quotes to inspire you.',
+    title: "E-Shop",
+    description:
+      "A full-fledged e-commerce store with product listings, shopping cart, checkout flow.",
+    imageUrl: eshop, 
+    projectUrl: "https://eshop.debasish.xyz/",
+    githubUrl: "https://github.com/debasish39/E-Commerce",
+  },
+  {
+  title: 'JWT Authentication System',
+  description: 'A secure authentication and authorization system built with React, Django REST Framework, and JWT. Includes protected routes, role-based access, and password reset via email.',
+  imageUrl: jwt, 
+  projectUrl: 'https://jwt-auth.debasish.xyz/', 
+  githubUrl: 'https://github.com/debasish39/jwt-authentication' 
+},
+{
+  title: 'Blog App',
+  description: 'A full-stack blogging platform using Django where users can create, view, and manage posts with authentication and user-friendly UI.',
+  imageUrl: blog,
+  projectUrl: 'https://blog.debasish.xyz/',
+  githubUrl: 'https://github.com/debasish39/Blog-with-Authentication' 
+}
+,
+  {
+    title: "Quote Generator",
+    description: "An app that generates random quotes to inspire you.",
     imageUrl: quote,
-    projectUrl: 'https://quotes.debasish.xyz/',
-    githubUrl: 'https://github.com/debasish/quote-generator'
+    projectUrl: "https://quotes.debasish.xyz/",
+    githubUrl: "https://github.com/debasish39/quote-generator",
   },
   {
-    title: 'QR Code Generator',
-    description: 'Generate QR codes for any text or link easily.',
+    title: "QR Code Generator",
+    description: "Generate QR codes for any text or link easily.",
     imageUrl: qr,
-    projectUrl: 'https://qrcode.debasish.xyz/',
-    githubUrl: 'https://github.com/debasish/qr-code-generator'
+    projectUrl: "https://qrcode.debasish.xyz/",
+    githubUrl: "https://github.com/debasish39/qr-code-generator",
   },
   {
-    title: 'Text to Speech Converter',
-    description: 'Convert text into speech using this simple tool.',
+    title: "Text to Speech Converter",
+    description: "Convert text into speech using this simple tool.",
     imageUrl: txtspeech,
-    projectUrl: 'https://texttospeech.debasish.xyz/',
-    githubUrl: 'https://github.com/debasish/text-to-speech'
+    projectUrl: "https://texttospeech.debasish.xyz/",
+    githubUrl: "https://github.com/debasish39/text-to-speech",
   },
   {
-    title: 'To-Do App',
-    description: 'A simple to-do list app to manage your tasks efficiently.',
+    title: "To-Do App",
+    description: "A simple to-do list app to manage your tasks efficiently.",
     imageUrl: TodoApp,
-    projectUrl: 'https://todo.debasish.xyz/',
-    githubUrl: 'https://github.com/debasish/todo-app'
+    projectUrl: "https://todo.debasish.xyz/",
+    githubUrl: "https://github.com/debasish39/Todo_Redux",
   },
+ {
+  title: 'Credentials Manager',
+  description: 'A secure credentials management app to store and manage user login details with password visibility toggle and validation.',
+  imageUrl: crud,  
+  projectUrl: 'https://crud.debasish.xyz/',
+  githubUrl: 'https://github.com/debasish39/CRUD-by-React' 
+}
+,
   {
-    title: 'Basic Calculator',
-    description: 'A simple calculator for basic arithmetic operations.',
-    imageUrl: Calculator,
-    projectUrl: 'https://calculator.dob.debasish.xyz/',
-    githubUrl: 'https://github.com/debasish/basic-calculator'
-  },
-  {
-    title: 'Advanced Calculator',
-    description: 'A more advanced calculator with additional functions.',
+    title: "Advanced Calculator",
+    description: "A more advanced calculator with additional functions.",
     imageUrl: cal,
-    projectUrl: 'https://calculator.debasish.xyz/',
-    githubUrl: 'https://github.com/debasish/advanced-calculator'
+    projectUrl: "https://calculator.debasish.xyz/",
+    githubUrl: "https://github.com/debasish39/advanced-calculator",
   },
   {
-    title: 'Temperature Converter',
-    description: 'Convert temperatures between Celsius, Fahrenheit, and Kelvin.',
+    title: "Temperature Converter",
+    description:
+      "Convert temperatures between Celsius, Fahrenheit, and Kelvin.",
     imageUrl: tem,
-    projectUrl: 'https://temp.debasish.xyz/',
-    githubUrl: 'https://github.com/debasish/temp-converter'
+    projectUrl: "https://temp.debasish.xyz/",
+    githubUrl: "https://github.com/debasish39/temp-converter",
   },
-  {
-    title: 'Joke Generator',
-    description: 'Get a random joke every time you click the button!',
-    imageUrl: joke,
-    projectUrl: 'https://joke.debasish.xyz/',
-    githubUrl: 'https://github.com/debasish/joke-generator'
-  },
+{
+  title: 'Landing Page',
+  description: 'A modern, responsive landing page with smooth navigation, call-to-action buttons, and a clean layout for startups or businesses.',
+  imageUrl: landing, 
+  projectUrl: 'https://landing.debasish.xyz/', 
+  githubUrl: 'https://github.com/debasish39/Landing_page' 
+},
+
+
+
 ];
 
 const Projects = () => {
@@ -100,19 +131,19 @@ const Projects = () => {
       setShowScrollTop(pos > 300);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
       clearTimeout(timer);
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   if (pageLoading) {
     return (
       <div className="spinner-container">
-        <Spinner animation="border" variant="warning" role="status" >
+        <Spinner animation="border" variant="warning" role="status">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
         <p>Loading projects...</p>

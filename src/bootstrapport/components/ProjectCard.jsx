@@ -14,8 +14,8 @@ const ProjectCard = ({
 }) => {
   return (
     <Tilt
-      tiltMaxAngleX={30}
-      tiltMaxAngleY={30}
+      tiltMaxAngleX={15}
+      tiltMaxAngleY={15}
       scale={1.01}
       transitionSpeed={150}
     >

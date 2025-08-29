@@ -17,13 +17,15 @@
 .project-card .card-img-top {
   height: 200px;
   object-fit: cover;
-  padding:3px;
+  padding:9px;
+  border-radius: 18px;
   border-bottom: 1px solid #333;
   transition: transform 0.3s ease;
 }
 
 .project-card:hover .card-img-top {
-  transform: scale(0.9);
+  transform: scale(1.001);
+  border-radius: 18px;
 }
 
 .project-card .card-body {
