@@ -6,7 +6,7 @@ import { Typewriter } from "react-simple-typewriter";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Tilt from "react-parallax-tilt";
-import sonu from "./sonu-removebg.png";
+import sonu from "./our.png";
 import "./Home.css";
 import {  FaFolderOpen, FaFileAlt } from "react-icons/fa";
 
@@ -118,7 +118,7 @@ const Home = () => {
 
   <button className="hero-btn outline">
     <a
-      href="https://drive.google.com/file/d/11tKKl-ELpQh_RhsjqCiU0B-TBkaOoS65/view?usp=drive_link"
+      href="https://drive.google.com/file/d/1L3FYCkgGEmY4V9G0XnKqTMrq-3SeIaid/view?usp=sharing"
       target="_blank"
       rel="noopener noreferrer"
       className="btn-link white" style={{ display: "flex", alignItems: "center",justifyContent:'center' }}
