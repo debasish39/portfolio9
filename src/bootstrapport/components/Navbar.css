@@ -237,49 +237,53 @@
 
 /* ===== Responsive Nav Link Style ===== */
 @media (max-width: 991px) {
-  .custom-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-  }
+/* Common Navbar Styling */
+.custom-navbar {
+  background: linear-gradient(to right, #000000, #1a1a1a, #4a3e0e);
+  z-index: 1050;
+}
 
-  .custom-nav .nav-link {
-    position: relative;
-    color: #f8f8f8 !important;
-    font-weight: 600;
-    font-size: 1.1rem;
-    padding: 12px 18px;
-    margin: 30px 0;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    text-align: center;
-    width: 100%;
-    max-width: 250px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
+.brand-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffdd57 !important;
+}
 
-  .custom-nav .nav-link::after {
-    content: "";
-    position: absolute;
-    bottom: 6px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 3px;
-    background-color: #ffdd57;
-    border-radius: 5px;
-    transition: width 0.4s ease;
-  }
+.custom-nav .nav-link {
+  color: white !important;
+  /* margin: 0 10px; */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
-  .custom-nav .nav-link:hover::after,
-  .custom-nav .nav-link.active::after {
-    width: 50%;
-  }
+.custom-nav .nav-link:hover,
+.custom-nav .nav-link.active {
+  color: #ffdd57 !important;
+}
+
+/* Bottom navbar (for mobile) */
+.bottom-navbar {
+  background: linear-gradient(to right, #000000, #1a1a1a, #4a3e0e);
+  padding: 5px 0;
+}
+
+.bottom-link {
+  color: white !important;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom-link .nav-label {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+.bottom-link.active {
+  color: #ffdd57 !important;
+}
+
 }
 
 /* ===== General Utilities ===== */

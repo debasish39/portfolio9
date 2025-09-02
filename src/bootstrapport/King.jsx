@@ -26,7 +26,7 @@ function King() {
         >
 
         <MyNavbar />
-        <div style={{ paddingTop: '90px' }}></div> {/* Add padding to push content down */}
+         <div style={{ paddingTop: '69px' }}></div> {/*Add padding to push content down */}
         <div className="flex-grow-1 select">
           <Routes>
             <Route path="/" element={<Home />} />
