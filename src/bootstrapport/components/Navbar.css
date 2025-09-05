@@ -37,7 +37,7 @@
 }
 @media (max-width: 576px) {
   .brand-logo {
-    font-size: 33px;
+    /* font-size: 33px; */
   }
 }
 
@@ -383,7 +383,7 @@ body {
 }
 @media (max-width: 576px) {
   .brand-logo {
-    font-size: 33px;
+    /* font-size: 33px; */
   }
 }
 
